@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Calendar, Users, Building } from "lucide-react"
 import { RevealText } from "@/components/reveal-text"
 import { SectionHeading } from "@/components/section-heading"
+import Link from "next/link"
 
 export default function WhatWeveDonePage() {
   return (
@@ -42,7 +43,7 @@ export default function WhatWeveDonePage() {
                     <Calendar className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
                     <div>
                       <span className="font-medium">Event Date:</span>
-                      <p className="text-neutral-400">April 2025</p>
+                      <p className="text-neutral-400">29, April 2025</p>
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -64,6 +65,7 @@ export default function WhatWeveDonePage() {
                   Our inaugural Demo Day at Token2049 Dubai was a proof-of-concept that validated our approach. We're
                   now scaling our operations based on the success and learnings from this event.
                 </p>
+                <Link className="text-accent mt-3" target="_blank" href={"https://lu.ma/user/BackersStage"}>Demo day & Pitch compition @Token2049</Link>
               </div>
               <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden">
                 <Image src="/blockchain-conference.png" alt="Token2049 Dubai Demo Day" fill className="object-cover" />

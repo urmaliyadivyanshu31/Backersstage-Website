@@ -28,7 +28,7 @@ export default function VisionPage() {
       </section>
 
       {/* Timeline */}
-      <section className="section-padding">
+      <section className="">
         <div className="container-md">
           {/* <SectionHeading
             title="Our Roadmap"
@@ -36,7 +36,7 @@ export default function VisionPage() {
             center
           /> */}
 
-          <div className="max-w-3xl mx-auto mt-16 space-y-12">
+          <div className="max-w-3xl mx-auto mt-2 pb-24 space-y-12">
             <TimelineItem
               date="Q1 2025"
               title="BackersStage Founded"

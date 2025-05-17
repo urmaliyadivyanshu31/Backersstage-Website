@@ -1,35 +1,35 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
+      setScrolled(window.scrollY > 20);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-    document.body.style.overflow = !isOpen ? "hidden" : ""
-  }
+    setIsOpen(!isOpen);
+    document.body.style.overflow = !isOpen ? "hidden" : "";
+  };
 
   const closeMenu = () => {
-    setIsOpen(false)
-    document.body.style.overflow = ""
-  }
+    setIsOpen(false);
+    document.body.style.overflow = "";
+  };
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -39,14 +39,14 @@ export function Navbar() {
     { name: "Collaborate", path: "/collaborate" },
     { name: "Media", path: "/media" },
     { name: "Contact", path: "/contact" },
-  ]
+  ];
 
   return (
     <>
       <header
         className={cn(
           "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-          scrolled ? "py-3 bg-neutral-950/80 backdrop-blur-md" : "py-6",
+          scrolled ? "py-3 bg-neutral-950/80 backdrop-blur-md" : "py-6"
         )}
       >
         <div className="container-xl flex items-center justify-between">
@@ -64,7 +64,7 @@ export function Navbar() {
                 href={link.path}
                 className={cn(
                   "relative text-sm font-medium transition-colors hover:text-accent",
-                  pathname === link.path ? "text-accent" : "text-neutral-300",
+                  pathname === link.path ? "text-accent" : "text-neutral-300"
                 )}
               >
                 {link.name}
@@ -86,7 +86,7 @@ export function Navbar() {
               variant="default"
               className="bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group"
             >
-              <Link href="/collaborate">
+              <Link href="https://lu.ma/user/BackersStage" target="_blank">
                 <span className="relative z-10">Apply to Pitch</span>
                 <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
               </Link>
@@ -103,19 +103,19 @@ export function Navbar() {
               <div
                 className={cn(
                   "bg-neutral-100 h-0.5 w-6 transform transition-all duration-300 origin-left",
-                  isOpen && "rotate-[42deg]",
+                  isOpen && "rotate-[42deg]"
                 )}
               />
               <div
                 className={cn(
                   "bg-neutral-100 h-0.5 w-6 rounded transform transition-all duration-300",
-                  isOpen && "translate-x-10",
+                  isOpen && "translate-x-10"
                 )}
               />
               <div
                 className={cn(
                   "bg-neutral-100 h-0.5 w-6 transform transition-all duration-300 origin-left",
-                  isOpen && "-rotate-[42deg]",
+                  isOpen && "-rotate-[42deg]"
                 )}
               />
             </div>
@@ -146,7 +146,9 @@ export function Navbar() {
                       href={link.path}
                       className={cn(
                         "text-2xl font-display font-bold transition-colors hover:text-accent",
-                        pathname === link.path ? "text-accent" : "text-neutral-100",
+                        pathname === link.path
+                          ? "text-accent"
+                          : "text-neutral-100"
                       )}
                       onClick={closeMenu}
                     >
@@ -167,7 +169,11 @@ export function Navbar() {
                   size="lg"
                   className="bg-accent text-accent-foreground hover:bg-accent/90"
                 >
-                  <Link href="/collaborate" onClick={closeMenu}>
+                  <Link
+                    href="https://lu.ma/user/BackersStage"
+                    target="_blank"
+                    onClick={closeMenu}
+                  >
                     Apply to Pitch
                   </Link>
                 </Button>
@@ -177,5 +183,5 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

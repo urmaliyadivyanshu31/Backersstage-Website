@@ -1,18 +1,17 @@
-import Link from "next/link"
-import { ArrowRight, Building, Rocket, Users } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { ArrowRight, Building, Rocket, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function CollaboratePage() {
   return (
-    <>
-      {/* Hero Section */}
-      <section className="section-padding bg-off-white">
+    <div className="flex flex-col min-h-screen max-w-5xl px-8 items-center mx-auto">
+      <section className="section-padding  bg-off-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-6">Collaborate with Us</h1>
             <p className="text-xl text-muted-foreground">
-              Whether you're a startup, investor, or ecosystem partner, we have opportunities for meaningful
-              collaboration.
+              Whether you're a startup, investor, or ecosystem partner, we have
+              opportunities for meaningful collaboration.
             </p>
           </div>
         </div>
@@ -33,8 +32,8 @@ export default function CollaboratePage() {
                   For Startups
                 </h3>
                 <p className="text-neutral-400 mb-6 group-hover:text-neutral-300 transition-colors duration-300 flex-grow">
-                  Ready to showcase your project? Apply to pitch at our next Demo Day and get in front of vetted
-                  investors and partners.
+                  Ready to showcase your project? Apply to pitch at our next
+                  Demo Day and get in front of vetted investors and partners.
                 </p>
                 <Button
                   asChild
@@ -62,7 +61,8 @@ export default function CollaboratePage() {
                   For Ecosystems
                 </h3>
                 <p className="text-neutral-400 mb-6 group-hover:text-neutral-300 transition-colors duration-300 flex-grow">
-                  Want to showcase your ecosystem? Partner with us to host a Demo Day focused on your ecosystem.
+                  Want to showcase your ecosystem? Partner with us to host a
+                  Demo Day focused on your ecosystem.
                 </p>
                 <Button
                   asChild
@@ -90,8 +90,8 @@ export default function CollaboratePage() {
                   For VCs/Partners
                 </h3>
                 <p className="text-neutral-400 mb-6 group-hover:text-neutral-300 transition-colors duration-300 flex-grow">
-                  Looking for quality projects? Join our network of investors and partners to get early access to
-                  curated projects.
+                  Looking for quality projects? Join our network of investors
+                  and partners to get early access to curated projects.
                 </p>
                 <Button
                   asChild
@@ -112,9 +112,11 @@ export default function CollaboratePage() {
       </section>
 
       {/* Improved Partnership Benefits */}
-      <section className="section-padding bg-neutral-900/30">
+      <section className="section-padding px-8 bg-neutral-900/30">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Partner With Us</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Why Partner With Us
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="glass p-8 rounded-lg relative overflow-hidden group hover:shadow-[0_0_25px_rgba(130,255,165,0.1)] transition-all duration-500">
@@ -174,10 +176,15 @@ export default function CollaboratePage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-xl mb-8">
-              Fill out our application form or reach out directly to discuss collaboration opportunities.
+              Fill out our application form or reach out directly to discuss
+              collaboration opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-dark-contrast text-white hover:bg-dark-contrast/90">
+              <Button
+                asChild
+                size="lg"
+                className="bg-dark-contrast text-white hover:bg-dark-contrast/90"
+              >
                 <Link href="https://forms.gle/YourFormLink" target="_blank">
                   Apply Now
                 </Link>
@@ -197,6 +204,6 @@ export default function CollaboratePage() {
           </div>
         </div>
       </section>
-    </>
-  )
+    </div>
+  );
 }

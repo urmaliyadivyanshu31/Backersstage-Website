@@ -1,10 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ExternalLink } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function MediaPage() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen px-8 max-w-5xl items-center w-full mx-auto">
       {/* Hero Section */}
       <section className="section-padding bg-off-white">
         <div className="container-custom">
@@ -95,15 +96,19 @@ export default function MediaPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Press Kit</h2>
             <p className="text-xl mb-8">For media inquiries or to request our press kit, please contact our team.</p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-dark-contrast px-6 py-3 text-base font-medium text-white shadow transition-colors hover:bg-dark-contrast/90"
-            >
-              Contact for Press Kit
-            </Link>
+                <Button
+                    asChild
+                    size="lg"
+                    className="bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group"
+                  >
+                    <Link href="https://lu.ma/user/BackersStage" target="_blank">
+                      <span className="relative z-10">Media Press</span>
+                      <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                    </Link>
+                  </Button>
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }

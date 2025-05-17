@@ -1,19 +1,38 @@
-import Link from "next/link"
-import { ArrowRight, BarChart, Calendar, CheckCircle, Filter, Handshake, Users, Zap, Construction, Clock } from "lucide-react"
-import type { LucideIcon } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { SectionHeading } from "@/components/section-heading"
-import { FeatureCard } from "@/components/feature-card"
-import { MagneticButton } from "@/components/magnetic-button"
-import { ParallaxSection } from "@/components/parallax-section"
-import { Marquee } from "@/components/marquee"
-import { RevealText } from "@/components/reveal-text"
-import { RevealImage } from "@/components/reveal-image"
-import { IconWrapper } from "@/components/icon-wrapper"
-import { StatCard } from "@/components/stat-card"
+import Link from "next/link";
+import {
+  ArrowRight,
+  BarChart,
+  Calendar,
+  CheckCircle,
+  Filter,
+  Handshake,
+  Users,
+  Zap,
+  Construction,
+  Clock,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/section-heading";
+import { FeatureCard } from "@/components/feature-card";
+import { MagneticButton } from "@/components/magnetic-button";
+import { ParallaxSection } from "@/components/parallax-section";
+import { Marquee } from "@/components/marquee";
+import { RevealText } from "@/components/reveal-text";
+import { RevealImage } from "@/components/reveal-image";
+import { IconWrapper } from "@/components/icon-wrapper";
+import { StatCard } from "@/components/stat-card";
+import Image from "next/image";
 
 // Define the specific icon names we're using
-type IconName = "BarChart" | "Handshake" | "Zap" | "CheckCircle" | "Calendar" | "Filter" | "Users"
+type IconName =
+  | "BarChart"
+  | "Handshake"
+  | "Zap"
+  | "CheckCircle"
+  | "Calendar"
+  | "Filter"
+  | "Users";
 
 export default function Home() {
   return (
@@ -29,14 +48,16 @@ export default function Home() {
           <div className="max-w-5xl mx-auto text-center">
             <RevealText>
               <h1 className="heading-xl mb-6">
-                Curating the Next <span className="text-gradient">100</span> Web3 Unicorns
+                Curating the Next <span className="text-gradient">100</span>{" "}
+                Web3 Unicorns
               </h1>
             </RevealText>
 
             <RevealText delay={0.2}>
               <p className="body-lg text-neutral-400 mb-10 max-w-2xl mx-auto">
-                BackersStage connects early-stage blockchain startups with global investors, mentors, and partners
-                through curated Demo Days and long-term collaboration.
+                BackersStage connects early-stage blockchain startups with
+                global investors, mentors, and partners through curated Demo
+                Days and long-term collaboration.
               </p>
             </RevealText>
 
@@ -49,7 +70,7 @@ export default function Home() {
                     size="lg"
                     className="bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group"
                   >
-                    <Link href="/collaborate">
+                    <Link href="https://lu.ma/user/BackersStage" target="_blank">
                       <span className="relative z-10">Apply to Pitch</span>
                       <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                     </Link>
@@ -59,7 +80,12 @@ export default function Home() {
 
               <RevealText delay={0.4}>
                 <MagneticButton>
-                  <Button asChild size="lg" variant="outline" className="relative overflow-hidden group">
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="relative overflow-hidden group"
+                  >
                     <Link href="/collaborate">
                       <span className="relative z-10">Host a Demo Day</span>
                       <span className="absolute inset-0 bg-accent/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
@@ -123,31 +149,51 @@ export default function Home() {
               <RevealText delay={0.1}>
                 <div className="flex items-center space-x-3 mb-2">
                   <div className="h-1 w-10 bg-accent"></div>
-                  <span className="text-accent font-medium">Token2049 Dubai</span>
+                  <Link
+                    href={"https://lu.ma/ka7540hd"}
+                    target="_blank"
+                    className="text-accent font-medium"
+                  >
+                    Demo day & Pitch compition @Token2049
+                  </Link>
                 </div>
-                <h3 className="heading-md">Connecting Visionary Builders with Strategic Backers</h3>
+                <h3 className="heading-md">
+                  BackersStage hosted a focused Demo Day during Token2049 Dubai
+                </h3>
               </RevealText>
 
               <RevealText delay={0.2}>
                 <p className="text-neutral-400">
-                  Our inaugural Demo Day showcased the most promising early-stage Web3 projects to a curated audience of
-                  investors, mentors, and ecosystem partners. The event validated our approach to creating meaningful
-                  connections in the blockchain space.
+                  Designed to connect high-potential Web3 projects with aligned
+                  investors and ecosystem partners. The event featured
+                  structured 1:1 meetings between founders and VCs, offering
+                  direct access to strategic capital and guidance. Supported by
+                  NEAR Foundation and Camp Network, the format emphasized
+                  quality matchmaking and founder-centric outcomes
+                  over volume or hype.
                 </p>
               </RevealText>
 
               <div className="grid grid-cols-2 gap-6 mt-8">
                 <RevealText delay={0.3}>
                   <div className="custom-card p-6">
-                    <div className="text-3xl font-display font-bold text-accent mb-2">500+</div>
-                    <p className="text-neutral-400">Projects registered for our Demo Day</p>
+                    <div className="text-3xl font-display font-bold text-accent mb-2">
+                      500+
+                    </div>
+                    <p className="text-neutral-400">
+                      Projects registered for our Demo Day
+                    </p>
                   </div>
                 </RevealText>
 
                 <RevealText delay={0.4}>
                   <div className="custom-card p-6">
-                    <div className="text-3xl font-display font-bold text-accent mb-2">50+</div>
-                    <p className="text-neutral-400">VCs showed interest in joining</p>
+                    <div className="text-3xl font-display font-bold text-accent mb-2">
+                      50+
+                    </div>
+                    <p className="text-neutral-400">
+                      VCs showed interest in joining
+                    </p>
                   </div>
                 </RevealText>
               </div>
@@ -203,19 +249,26 @@ export default function Home() {
 
       {/* Marquee Section */}
       <ParallaxSection className="py-16" speed={0.1}>
-        <Marquee className="py-4" speed={40}>
+        <Marquee className="py-4" speed={0.01}>
           <div className="flex items-center space-x-12 px-8">
             {[
-              "Web3 Growth",
-              "Startup Ecosystem",
-              "Investor Matching",
-              "Demo Days",
-              "Blockchain Innovation",
-              "Founder Support",
-              "Global Network",
+              "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747499435662",
+              "https://ik.imagekit.io/d2v6okduo/icon_rev.png?updatedAt=1747499534663",
+              "https://ik.imagekit.io/d2v6okduo/image%2017@3x.png?updatedAt=1747507566763",
+              "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747499435662",
+              "https://ik.imagekit.io/d2v6okduo/icon_rev.png?updatedAt=1747499534663",
+              "https://ik.imagekit.io/d2v6okduo/image%2017@3x.png?updatedAt=1747507566763",
             ].map((item, i) => (
-              <div key={i} className="text-4xl font-display font-bold text-neutral-800">
-                {item}
+              <div
+                key={i}
+                className="text-4xl font-display font-bold text-neutral-800"
+              >
+                <Image
+                  src={item}
+                  alt={`${item} logo`}
+                  height={80}
+                  width={200}
+                />
                 <span className="text-accent mx-4">•</span>
               </div>
             ))}
@@ -269,10 +322,30 @@ export default function Home() {
         <div className="container-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { number: "500+", label: "Projects Registered", icon: "BarChart" as IconName, delay: 0.1 },
-              { number: "50+", label: "VCs Interested", icon: "Handshake" as IconName, delay: 0.2 },
-              { number: "10k+", label: "2026 Project Goal", icon: "Zap" as IconName, delay: 0.3 },
-              { number: "500+", label: "2026 VC Goal", icon: "CheckCircle" as IconName, delay: 0.4 },
+              {
+                number: "500+",
+                label: "Projects Registered",
+                icon: "BarChart" as IconName,
+                delay: 0.1,
+              },
+              {
+                number: "50+",
+                label: "VCs Interested",
+                icon: "Handshake" as IconName,
+                delay: 0.2,
+              },
+              {
+                number: "10k+",
+                label: "2026 Project Goal",
+                icon: "Zap" as IconName,
+                delay: 0.3,
+              },
+              {
+                number: "500+",
+                label: "2026 VC Goal",
+                icon: "CheckCircle" as IconName,
+                delay: 0.4,
+              },
             ].map((stat, i) => (
               <RevealText key={i} delay={stat.delay}>
                 <StatCard
@@ -293,13 +366,16 @@ export default function Home() {
           <div className="container-lg py-20">
             <div className="max-w-3xl mx-auto text-center">
               <RevealText>
-                <h2 className="heading-lg mb-6">Ready to Join the Ecosystem?</h2>
+                <h2 className="heading-lg mb-6">
+                  Ready to Join the Ecosystem?
+                </h2>
               </RevealText>
 
               <RevealText delay={0.1}>
                 <p className="text-xl text-neutral-400 mb-8">
-                  Whether you're a startup looking to pitch, a partner wanting to collaborate, or an investor seeking
-                  quality projects, we have a place for you.
+                  Whether you're a startup looking to pitch, a partner wanting
+                  to collaborate, or an investor seeking quality projects, we
+                  have a place for you.
                 </p>
               </RevealText>
 
@@ -322,7 +398,12 @@ export default function Home() {
 
                 <RevealText delay={0.3}>
                   <MagneticButton>
-                    <Button asChild size="lg" variant="outline" className="relative overflow-hidden group">
+                    <Button
+                      asChild
+                      size="lg"
+                      variant="outline"
+                      className="relative overflow-hidden group"
+                    >
                       <Link href="/collaborate">
                         <span className="relative z-10">Collaborate</span>
                         <span className="absolute inset-0 bg-accent/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
@@ -333,7 +414,12 @@ export default function Home() {
 
                 <RevealText delay={0.4}>
                   <MagneticButton>
-                    <Button asChild size="lg" variant="secondary" className="relative overflow-hidden group">
+                    <Button
+                      asChild
+                      size="lg"
+                      variant="secondary"
+                      className="relative overflow-hidden group"
+                    >
                       <Link href="/contact">
                         <span className="relative z-10">Talk to Team</span>
                         <span className="absolute inset-0 bg-accent/5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
@@ -347,5 +433,5 @@ export default function Home() {
         </div>
       </section>
     </>
-  )
+  );
 }
