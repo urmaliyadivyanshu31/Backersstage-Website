@@ -43,7 +43,7 @@ export default function AboutPage() {
               <RevealText delay={0.1}>
                 <p className="text-neutral-400 mb-6">
                   BackersStage is focused on connecting early-stage Web3
-                  infrastructure projects with the right resources to scale
+                  infrastructure projects w/- the right resources to scale
                   effectively. We provide structured 1:1 access to over 50
                   vetted VCs and strategic investors, along with expert
                   mentorship covering technical, economic, and go-to-market
