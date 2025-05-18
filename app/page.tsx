@@ -70,7 +70,10 @@ export default function Home() {
                     size="lg"
                     className="bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group"
                   >
-                    <Link href="https://lu.ma/user/BackersStage" target="_blank">
+                    <Link
+                      href="https://lu.ma/user/BackersStage"
+                      target="_blank"
+                    >
                       <span className="relative z-10">Apply to Pitch</span>
                       <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                     </Link>
@@ -137,7 +140,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <RevealImage
-              src="/demo-day.png"
+              src="https://ik.imagekit.io/d2v6okduo/PXL_20250429_130050697_2_.jpg?updatedAt=1747558918658"
               alt="Token2049 Dubai Demo Day"
               width={600}
               height={400}

@@ -1,7 +1,7 @@
-import { RevealText } from "@/components/reveal-text"
-import { SectionHeading } from "@/components/section-heading"
-import { TimelineItem } from "@/components/timeline-item"
-import { IconWrapper } from "@/components/icon-wrapper"
+import { RevealText } from "@/components/reveal-text";
+import { SectionHeading } from "@/components/section-heading";
+import { TimelineItem } from "@/components/timeline-item";
+import { IconWrapper } from "@/components/icon-wrapper";
 
 export default function VisionPage() {
   return (
@@ -16,7 +16,8 @@ export default function VisionPage() {
 
             <RevealText delay={0.1}>
               <p className="body-lg text-neutral-400 mb-8">
-                Our journey to connect 10,000+ early-stage projects to 500+ vetted VCs and ecosystem partners by 2026.
+                Our journey to connect 10,000+ early-stage projects to 500+
+                vetted VCs and ecosystem partners by 2026.
               </p>
             </RevealText>
 
@@ -48,7 +49,7 @@ export default function VisionPage() {
 
             <TimelineItem
               date="Q2 2025"
-              title="Demo Day (Token2049 Dubai)"
+              title="Demo Day and Pitch Competition (Token2049 Dubai)"
               description="Our inaugural Demo Day at Token2049 Dubai, connecting promising projects with investors and partners."
               icon="CheckCircle"
               status="completed"
@@ -110,17 +111,19 @@ export default function VisionPage() {
                 <IconWrapper name="Users" className="h-16 w-16" />
               </div>
               <p className="text-2xl font-display font-medium mb-6">
-                "To create a self-sustaining ecosystem where early-stage Web3 projects can find the resources,
-                mentorship, and connections they need to build the future of blockchain technology."
+                "To create a self-sustaining ecosystem where early-stage Web3
+                projects can find the resources, mentorship, and connections
+                they need to build the future of blockchain technology."
               </p>
               <p className="text-neutral-400">
-                We're building BackersStage for the long term, with a focus on creating sustainable value for all
-                participants in the Web3 ecosystem.
+                We're building BackersStage for the long term, with a focus on
+                creating sustainable value for all participants in the Web3
+                ecosystem.
               </p>
             </div>
           </RevealText>
         </div>
       </section>
     </>
-  )
+  );
 }

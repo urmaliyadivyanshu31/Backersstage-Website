@@ -1,12 +1,37 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Calendar, Users, Building } from "lucide-react"
-import { RevealText } from "@/components/reveal-text"
-import { SectionHeading } from "@/components/section-heading"
-import Link from "next/link"
+import Image from "next/image";
+import { Calendar, Users, Building } from "lucide-react";
+import { RevealText } from "@/components/reveal-text";
+import { SectionHeading } from "@/components/section-heading";
+import Link from "next/link";
+import { useState, useRef } from "react";
 
 export default function WhatWeveDonePage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSlide = (index: number) => {
+    if (scrollRef.current) {
+      const slideWidth = 300; // Width of each slide
+      const gap = 16; // Space between slides (space-x-4 = 16px)
+      scrollRef.current.scrollTo({
+        left: index * (slideWidth + gap),
+        behavior: "smooth",
+      });
+      setCurrentSlide(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const slideWidth = 300 + 16; // Width + gap
+      const scrollPosition = scrollRef.current.scrollLeft;
+      const newSlide = Math.round(scrollPosition / slideWidth);
+      setCurrentSlide(newSlide);
+    }
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -19,8 +44,9 @@ export default function WhatWeveDonePage() {
 
             <RevealText delay={0.1}>
               <p className="body-lg text-neutral-400 mb-8">
-                We're in the early stages of our journey, with our first successful Demo Day already demonstrating the
-                power of our approach.
+                We're in the early stages of our journey, with our first
+                successful Demo Day already demonstrating the power of our
+                approach.
               </p>
             </RevealText>
 
@@ -37,7 +63,9 @@ export default function WhatWeveDonePage() {
           <div className="glass p-8 rounded-lg max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl font-bold mb-4">Token2049 Dubai 2025</h2>
+                <h2 className="text-2xl font-bold mb-4">
+                  Token2049 Dubai 2025
+                </h2>
                 <ul className="space-y-4 mb-6">
                   <li className="flex items-start">
                     <Calendar className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
@@ -49,7 +77,9 @@ export default function WhatWeveDonePage() {
                   <li className="flex items-start">
                     <Users className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-medium">Project Registrations:</span>
+                      <span className="font-medium">
+                        Project Registrations:
+                      </span>
                       <p className="text-neutral-400">500+</p>
                     </div>
                   </li>
@@ -57,25 +87,40 @@ export default function WhatWeveDonePage() {
                     <Building className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
                     <div>
                       <span className="font-medium">VC Interest:</span>
-                      <p className="text-neutral-400">50+ VCs showed interest</p>
+                      <p className="text-neutral-400">
+                        50+ VCs showed interest
+                      </p>
                     </div>
                   </li>
                 </ul>
                 <p className="text-neutral-400">
-                  Our inaugural Demo Day at Token2049 Dubai was a proof-of-concept that validated our approach. We're
-                  now scaling our operations based on the success and learnings from this event.
+                  Our inaugural Demo Day at Token2049 Dubai was a
+                  proof-of-concept that validated our approach. We're now
+                  scaling our operations based on the success and learnings from
+                  this event.
                 </p>
-                <Link className="text-accent mt-3" target="_blank" href={"https://lu.ma/user/BackersStage"}>Demo day & Pitch compition @Token2049</Link>
+                <Link
+                  className="text-accent mt-3"
+                  target="_blank"
+                  href={"https://lu.ma/user/BackersStage"}
+                >
+                  Demo day & Pitch compition @Token2049
+                </Link>
               </div>
               <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden">
-                <Image src="/blockchain-conference.png" alt="Token2049 Dubai Demo Day" fill className="object-cover" />
+                <Image
+                  src="https://ik.imagekit.io/d2v6okduo/PXL_20250429_132947890.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559023669"
+                  alt="Token2049 Dubai Demo Day"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Event Gallery - Redesigned as a carousel */}
+      {/* Event Gallery Section */}
       <section className="section-padding">
         <div className="container-lg">
           <SectionHeading
@@ -85,39 +130,52 @@ export default function WhatWeveDonePage() {
           />
 
           <div className="relative overflow-hidden">
-            <div className="flex space-x-4 pb-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
-              {[...Array(6)].map((_, i) => (
+            <div
+              ref={scrollRef}
+              onScroll={handleScroll}
+              className="flex space-x-4 pb-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
+            >
+              {[
+                "https://ik.imagekit.io/d2v6okduo/PXL_20250429_130050697_2_.jpg?updatedAt=1747558918658",
+                "https://ik.imagekit.io/d2v6okduo/PXL_20250429_132947890.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559023669",
+                "https://ik.imagekit.io/d2v6okduo/PXL_20250429_130934569_1_(1).jpg?updatedAt=1747559181346",
+                "https://ik.imagekit.io/d2v6okduo/PXL_20250429_132802494.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559217287",
+                "https://ik.imagekit.io/d2v6okduo/PXL_20250429_125427299_2_.jpg?updatedAt=1747559243315",
+                "https://ik.imagekit.io/d2v6okduo/PXL_20250429_132802494.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559217287",
+                "https://ik.imagekit.io/d2v6okduo/PXL_20250429_141537936.MP_1_.jpg?updatedAt=1747559334860",
+              ].map((item, i) => (
                 <div
                   key={i}
                   className="relative flex-shrink-0 w-[300px] h-[300px] rounded-lg overflow-hidden snap-center hover-lift custom-glow group"
                 >
                   <Image
-                    src={`/blockchain-event.png?height=400&width=400&query=blockchain event ${i + 1}`}
+                    src={item}
                     alt={`Event photo ${i + 1}`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p className="text-sm text-white font-medium">Token2049 Dubai Demo Day</p>
+                    <p className="text-sm text-white font-medium">
+                      Token2049 Dubai Demo Day
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
 
             <div className="flex justify-center mt-6 space-x-2">
-              {[...Array(6)].map((_, i) => (
+              {[...Array(7)].map((_, i) => (
                 <button
                   key={i}
-                  className={`w-2 h-2 rounded-full ${i === 0 ? "bg-accent" : "bg-neutral-700"} transition-colors duration-300`}
+                  onClick={() => scrollToSlide(i)}
+                  className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                    i === currentSlide ? "bg-accent" : "bg-neutral-700"
+                  } hover:bg-accent/50`}
                   aria-label={`Go to slide ${i + 1}`}
                 />
               ))}
             </div>
           </div>
-
-          {/* <p className="text-center text-neutral-400 mt-8">
-            We're in the early stages of growth, with our proof-of-concept validated and scaling in progress.
-          </p> */}
         </div>
       </section>
 
@@ -131,5 +189,5 @@ export default function WhatWeveDonePage() {
         }
       `}</style>
     </>
-  )
+  );
 }
