@@ -15,7 +15,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-neutral-400 max-w-xs">
-              A Web3-native growth ecosystem platform connecting early-stage blockchain startups with global investors,
+              A Web3-native growth ecosystem platform connecting early-stage blockchain startups w/- global investors,
               mentors, and partners.
             </p>
             <div className="flex items-center space-x-4">
