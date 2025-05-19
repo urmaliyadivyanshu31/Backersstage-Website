@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/magnetic-button";
+import { InteractiveVenueMap } from "@/components/interactive-venue-map";
 
 export default function CannesEventPage() {
   // Parallax effect for hero section
@@ -39,35 +40,6 @@ export default function CannesEventPage() {
   // What to Expect section
   const [activeTab, setActiveTab] = useState(0);
   const expectRef = useRef<HTMLDivElement>(null);
-
-  // Intersection observer for animations
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-in");
-            // Unobserve after animation is added to prevent removal
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "50px",
-      }
-    );
-
-    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => {
-      document.querySelectorAll(".animate-on-scroll").forEach((el) => {
-        observer.unobserve(el);
-      });
-    };
-  }, []);
 
   // Auto-rotate tabs
   useEffect(() => {
@@ -109,6 +81,11 @@ export default function CannesEventPage() {
         "Hands-on from protocol engineers, token architects & GTM leaders",
     },
   ];
+
+  // Venue Information section
+  const [activeInfoTab, setActiveInfoTab] = useState<"map" | "info" | "travel">(
+    "map"
+  );
 
   return (
     <>
@@ -240,11 +217,419 @@ export default function CannesEventPage() {
           </div>
         </motion.div>
       </section>
+      <section className="section-padding bg-neutral-900/30">
+        <div className="container-lg">
+          <div className="text-center mb-16">
+            <h2 className="heading-lg mb-4">Venue Information</h2>
+            <p className="text-neutral-400 text-lg max-w-3xl mx-auto">
+              Explore the venue layout and essential information for
+              BackersStage: Founder-Powered Demo Day.
+            </p>
+            <div className="h-1 w-16 bg-accent mt-6 mx-auto" />
+          </div>
+
+          {/* Tabs */}
+          <div className="flex border-b border-neutral-800 mb-8">
+            <button
+              className={`px-4 py-2 font-medium text-sm relative ${
+                activeInfoTab === "map"
+                  ? "text-white"
+                  : "text-neutral-400 hover:text-white"
+              }`}
+              onClick={() => setActiveInfoTab("map")}
+            >
+              Venue Map
+              {activeInfoTab === "map" && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
+                />
+              )}
+            </button>
+            <button
+              className={`px-4 py-2 font-medium text-sm relative ${
+                activeInfoTab === "info"
+                  ? "text-white"
+                  : "text-neutral-400 hover:text-white"
+              }`}
+              onClick={() => setActiveInfoTab("info")}
+            >
+              Event Information
+              {activeInfoTab === "info" && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
+                />
+              )}
+            </button>
+            <button
+              className={`px-4 py-2 font-medium text-sm relative ${
+                activeInfoTab === "travel"
+                  ? "text-white"
+                  : "text-neutral-400 hover:text-white"
+              }`}
+              onClick={() => setActiveInfoTab("travel")}
+            >
+              Travel & Accommodation
+              {activeInfoTab === "travel" && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
+                />
+              )}
+            </button>
+          </div>
+
+          {/* Tab Content */}
+          <div className="mb-16">
+            {activeInfoTab === "map" && (
+              <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
+                <InteractiveVenueMap className="w-full h-[650px]" />
+                <div className="space-y-6">
+                  <div className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-xl p-6">
+                    <h3 className="text-xl font-bold mb-4">Venue Layout</h3>
+                    <p className="text-neutral-300">
+                      The Espace Croisette venue features dedicated areas for
+                      presentations, networking, and private meetings.
+                    </p>
+                    {/* Add more venue details here */}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeInfoTab === "info" && (
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-2 space-y-8">
+                  <div>
+                    <h3 className="text-xl font-bold mb-4">
+                      About Espace Croisette
+                    </h3>
+                    <p className="text-neutral-300 mb-4">
+                      Espace Croisette is a premier event venue located in the
+                      heart of Cannes, France. Known for its elegant design and
+                      versatile spaces, it regularly hosts high-profile events
+                      during major Cannes festivals and conferences.
+                    </p>
+                    <p className="text-neutral-300">
+                      For the BackersStage Demo Day, we've configured the space
+                      to maximize networking opportunities while providing
+                      dedicated areas for demos, presentations, and private
+                      meetings.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold mb-4">Venue Facilities</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {[
+                        {
+                          title: "High-Speed WiFi",
+                          description:
+                            "Enterprise-grade connectivity throughout the venue",
+                        },
+                        {
+                          title: "AV Equipment",
+                          description:
+                            "Professional sound and projection systems",
+                        },
+                        {
+                          title: "Catering",
+                          description: "Premium refreshments and beverages",
+                        },
+                        {
+                          title: "Accessibility",
+                          description:
+                            "Wheelchair accessible entrances and facilities",
+                        },
+                        {
+                          title: "Security",
+                          description:
+                            "Professional security staff and controlled access",
+                        },
+                        {
+                          title: "Technical Support",
+                          description:
+                            "On-site tech team for presenters and demos",
+                        },
+                      ].map((facility, i) => (
+                        <div
+                          key={i}
+                          className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-4"
+                        >
+                          <h4 className="font-medium mb-1">{facility.title}</h4>
+                          <p className="text-sm text-neutral-400">
+                            {facility.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold mb-4">Event Schedule</h3>
+                    <div className="space-y-4">
+                      {[
+                        {
+                          time: "3:30 PM - 4:00 PM",
+                          title: "Registration & Welcome",
+                          description:
+                            "Check-in, badge collection, and welcome refreshments",
+                        },
+                        {
+                          time: "4:00 PM - 4:15 PM",
+                          title: "Opening Remarks",
+                          description: "Introduction and event overview",
+                        },
+                        {
+                          time: "4:15 PM - 5:30 PM",
+                          title: "Builder Showcases",
+                          description:
+                            "Technical demonstrations from selected projects",
+                        },
+                        {
+                          time: "5:30 PM - 6:15 PM",
+                          title: "Panel Discussion",
+                          description:
+                            "Industry experts discuss the future of Web3 infrastructure",
+                        },
+                        {
+                          time: "6:15 PM - 7:30 PM",
+                          title: "Networking Reception",
+                          description:
+                            "Connect with founders, investors, and industry leaders",
+                        },
+                      ].map((item, i) => (
+                        <div
+                          key={i}
+                          className="flex border-l-2 border-accent pl-4"
+                        >
+                          <div className="w-32 flex-shrink-0">
+                            <div className="text-sm font-medium">
+                              {item.time}
+                            </div>
+                          </div>
+                          <div>
+                            <h4 className="font-medium">{item.title}</h4>
+                            <p className="text-sm text-neutral-400">
+                              {item.description}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="sticky top-24 space-y-6">
+                    <div className="rounded-xl overflow-hidden bg-neutral-800">
+                      {/* Fallback background */}
+                      <div className="w-full h-[250px] bg-neutral-800 flex items-center justify-center">
+                        <span className="text-neutral-500">Venue Image</span>
+                      </div>
+                      <Image
+                        src="/luxury-cannes-venue.png"
+                        alt="Espace Croisette"
+                        width={600}
+                        height={400}
+                        className="w-full h-auto object-cover absolute inset-0"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = "none";
+                        }}
+                      />
+                    </div>
+
+                    <div className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-xl p-6">
+                      <h3 className="text-xl font-bold mb-4">
+                        Contact Information
+                      </h3>
+                      <div className="space-y-3">
+                        <div>
+                          <div className="text-sm text-neutral-400">
+                            Address
+                          </div>
+                          <div>
+                            Espace Croisette, La Croisette, Cannes, France
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-sm text-neutral-400">
+                            Event Contact
+                          </div>
+                          <div>events@backersstage.com</div>
+                        </div>
+                        <div>
+                          <div className="text-sm text-neutral-400">
+                            Emergency Contact
+                          </div>
+                          <div>+33 (0) 123 456 789</div>
+                        </div>
+                      </div>
+
+                      <div className="mt-6">
+                        <Button asChild className="w-full">
+                          <a
+                            href="https://maps.google.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Open in Google Maps
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeInfoTab === "travel" && (
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-2 space-y-8">
+                  <div>
+                    <h3 className="text-xl font-bold mb-4">
+                      Getting to Cannes
+                    </h3>
+                    <div className="space-y-6">
+                      <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-6">
+                        <h4 className="font-medium mb-3">By Air</h4>
+                        <p className="text-neutral-300 mb-4">
+                          The nearest airport is Nice Côte d'Azur International
+                          Airport (NCE), located approximately 27 km from
+                          Cannes. It offers direct flights from major European
+                          cities and connections worldwide.
+                        </p>
+                        <div className="space-y-2">
+                          <div className="flex items-start gap-2">
+                            <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <ArrowRight className="h-3 w-3 text-accent" />
+                            </div>
+                            <p className="text-sm text-neutral-400">
+                              <span className="font-medium text-neutral-300">
+                                Taxi:
+                              </span>{" "}
+                              Available outside the terminal. Journey time to
+                              Cannes is approximately 30-45 minutes, costing
+                              €80-100.
+                            </p>
+                          </div>
+                          <div className="flex items-start gap-2">
+                            <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <ArrowRight className="h-3 w-3 text-accent" />
+                            </div>
+                            <p className="text-sm text-neutral-400">
+                              <span className="font-medium text-neutral-300">
+                                Shuttle Bus:
+                              </span>{" "}
+                              Express Coach 210 runs between Nice Airport and
+                              Cannes. Journey time is approximately 50 minutes,
+                              costing €22.
+                            </p>
+                          </div>
+                          <div className="flex items-start gap-2">
+                            <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <ArrowRight className="h-3 w-3 text-accent" />
+                            </div>
+                            <p className="text-sm text-neutral-400">
+                              <span className="font-medium text-neutral-300">
+                                Train:
+                              </span>{" "}
+                              Take a shuttle to Nice-Ville station, then a train
+                              to Cannes. Total journey time is approximately 1
+                              hour.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-6">
+                        <h4 className="font-medium mb-3">By Train</h4>
+                        <p className="text-neutral-300 mb-4">
+                          Cannes is well-connected by rail to major French and
+                          European cities. The main station, Gare de Cannes, is
+                          located in the city center, approximately 1 km from
+                          Espace Croisette.
+                        </p>
+                        <div className="space-y-2">
+                          <div className="flex items-start gap-2">
+                            <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <ArrowRight className="h-3 w-3 text-accent" />
+                            </div>
+                            <p className="text-sm text-neutral-400">
+                              <span className="font-medium text-neutral-300">
+                                From Paris:
+                              </span>{" "}
+                              High-speed TGV trains run regularly from Paris to
+                              Cannes, with a journey time of approximately 5-6
+                              hours.
+                            </p>
+                          </div>
+                          <div className="flex items-start gap-2">
+                            <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <ArrowRight className="h-3 w-3 text-accent" />
+                            </div>
+                            <p className="text-sm text-neutral-400">
+                              <span className="font-medium text-neutral-300">
+                                From Nice:
+                              </span>{" "}
+                              Regular regional trains connect Nice to Cannes,
+                              with a journey time of approximately 30 minutes.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-neutral-800/50 border border-neutral-700 rounded-lg p-6">
+                        <h4 className="font-medium mb-3">By Car</h4>
+                        <p className="text-neutral-300 mb-4">
+                          Cannes is accessible via the A8 motorway, which runs
+                          along the French Riviera. Note that parking in central
+                          Cannes can be limited and expensive.
+                        </p>
+                        <div className="space-y-2">
+                          <div className="flex items-start gap-2">
+                            <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <ArrowRight className="h-3 w-3 text-accent" />
+                            </div>
+                            <p className="text-sm text-neutral-400">
+                              <span className="font-medium text-neutral-300">
+                                From Nice:
+                              </span>{" "}
+                              Take the A8 motorway westbound, then exit at
+                              Junction 42 for Cannes. Journey time is
+                              approximately 30-45 minutes.
+                            </p>
+                          </div>
+                          <div className="flex items-start gap-2">
+                            <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <ArrowRight className="h-3 w-3 text-accent" />
+                            </div>
+                            <p className="text-sm text-neutral-400">
+                              <span className="font-medium text-neutral-300">
+                                Parking:
+                              </span>{" "}
+                              Several public parking garages are available near
+                              La Croisette, including Parking Laubeuf and
+                              Parking Suquet Forville.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
 
       {/* Proven Format Section */}
       <section className="section-padding">
         <div className="container-lg">
-          <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+          <div className="animate-on-scroll  translate-y-8 transition-all duration-1000">
             <div className="text-center mb-16">
               <h2 className="heading-lg mb-4">Proven Format, Ready to Scale</h2>
               <p className="text-neutral-400 text-lg max-w-3xl mx-auto">
@@ -257,7 +642,7 @@ export default function CannesEventPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-100 relative rounded-lg overflow-hidden group">
+            <div className="animate-on-scroll  translate-y-8 transition-all duration-1000 delay-100 relative rounded-lg overflow-hidden group">
               <Image
                 src="/dubai-event.png"
                 alt="Dubai Event"
@@ -277,7 +662,7 @@ export default function CannesEventPage() {
             </div>
 
             <div className="space-y-8">
-              <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-200">
+              <div className="animate-on-scroll  translate-y-8 transition-all duration-1000 delay-200">
                 <h3 className="text-3xl font-bold mb-8">Key Outcomes:</h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -319,7 +704,7 @@ export default function CannesEventPage() {
                 </div>
               </div>
 
-              <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-300">
+              <div className=" translate-y-8 transition-all duration-1000 delay-300">
                 <ul className="space-y-4">
                   {[
                     "Projects pitched to full rooms — some even landed main stage spots.",
@@ -349,7 +734,7 @@ export default function CannesEventPage() {
         className="section-padding bg-neutral-900/30 overflow-hidden"
       >
         <div className="container-lg">
-          <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+          <div className=" translate-y-8 transition-all duration-1000">
             <div className="text-center mb-16">
               <h2 className="heading-lg mb-4">What to Expect in Cannes</h2>
               <p className="text-neutral-400 text-lg max-w-3xl mx-auto">
@@ -362,7 +747,7 @@ export default function CannesEventPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Tab Navigation */}
-            <div className="lg:col-span-4 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-100">
+            <div className="lg:col-span-4 translate-y-8 transition-all duration-1000 delay-100">
               <div className="sticky top-24 space-y-2">
                 {expectTabs.map((tab, index) => (
                   <button
@@ -412,7 +797,7 @@ export default function CannesEventPage() {
             </div>
 
             {/* Tab Content */}
-            <div className="lg:col-span-8 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-200">
+            <div className="lg:col-span-8  translate-y-8 transition-all duration-1000 delay-200">
               <div className="relative h-full">
                 <AnimatePresence mode="wait">
                   {expectTabs.map(
@@ -530,9 +915,9 @@ export default function CannesEventPage() {
           </div>
 
           {/* Interactive 3D-like cards */}
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-300">
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 animate-on-scroll  translate-y-8 transition-all duration-1000 delay-300">
             <div className="relative group perspective">
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/5 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/5 rounded-xl blur-xl  group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="relative bg-neutral-900/80 backdrop-blur-md border border-neutral-800 p-6 rounded-xl group-hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] transform transition-all duration-500 group-hover:rotate-y-10 group-hover:-rotate-x-10">
                 <div className="mb-4 text-accent bg-accent/10 w-12 h-12 rounded-full flex items-center justify-center">
                   <Calendar className="h-6 w-6" />
@@ -548,7 +933,7 @@ export default function CannesEventPage() {
             </div>
 
             <div className="relative group perspective">
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/5 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/5 rounded-xl blur-xl  group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="relative bg-neutral-900/80 backdrop-blur-md border border-neutral-800 p-6 rounded-xl group-hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] transform transition-all duration-500 group-hover:rotate-y-10 group-hover:-rotate-x-10">
                 <div className="mb-4 text-accent bg-accent/10 w-12 h-12 rounded-full flex items-center justify-center">
                   <MapPin className="h-6 w-6" />
@@ -565,7 +950,7 @@ export default function CannesEventPage() {
             </div>
 
             <div className="relative group perspective">
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/5 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/5 rounded-xl blur-xl  group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="relative bg-neutral-900/80 backdrop-blur-md border border-neutral-800 p-6 rounded-xl group-hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] transform transition-all duration-500 group-hover:rotate-y-10 group-hover:-rotate-x-10">
                 <div className="mb-4 text-accent bg-accent/10 w-12 h-12 rounded-full flex items-center justify-center">
                   <Users className="h-6 w-6" />
@@ -587,7 +972,7 @@ export default function CannesEventPage() {
       {/* Partnership Options Section */}
       <section id="sponsor" className="section-padding">
         <div className="container-lg">
-          <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+          <div className="animate-on-scroll  translate-y-8 transition-all duration-1000">
             <div className="text-center mb-16">
               <h2 className="heading-lg mb-4">Partnership Options</h2>
               <p className="text-neutral-400 text-lg max-w-3xl mx-auto">
@@ -600,7 +985,7 @@ export default function CannesEventPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {/* Title Sponsor */}
-            <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-100">
+            <div className="animate-on-scroll  translate-y-8 transition-all duration-1000 delay-100">
               <div className="custom-card p-8 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] transition-all duration-500 border-2 border-accent h-full">
                 <div className="absolute top-0 right-0">
                   <div className="bg-accent text-accent-foreground px-4 py-1 font-medium">
@@ -658,7 +1043,7 @@ export default function CannesEventPage() {
             </div>
 
             {/* Ecosystem Partner */}
-            <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-200">
+            <div className="animate-on-scroll  translate-y-8 transition-all duration-1000 delay-200">
               <div className="custom-card p-8 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] transition-all duration-500 h-full">
                 <div className="mb-6 text-accent bg-accent/10 w-14 h-14 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                   <Users className="h-7 w-7" />
@@ -708,7 +1093,7 @@ export default function CannesEventPage() {
             </div>
 
             {/* Custom */}
-            <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-300">
+            <div className="animate-on-scroll  translate-y-8 transition-all duration-1000 delay-300">
               <div className="custom-card p-8 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] transition-all duration-500 h-full">
                 <div className="mb-6 text-accent bg-accent/10 w-14 h-14 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                   <Zap className="h-7 w-7" />
@@ -754,7 +1139,7 @@ export default function CannesEventPage() {
       {/* About BackersStage Section */}
       <section className="section-padding bg-neutral-900/30">
         <div className="container-lg">
-          <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+          <div className="animate-on-scroll  translate-y-8 transition-all duration-1000">
             <div className="text-center mb-16">
               <h2 className="heading-lg mb-4">About BackersStage</h2>
               <p className="text-neutral-400 text-lg max-w-3xl mx-auto">
@@ -766,7 +1151,7 @@ export default function CannesEventPage() {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <p className="text-xl text-center text-neutral-300 mb-10 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-100">
+            <p className="text-xl text-center text-neutral-300 mb-10 animate-on-scroll  translate-y-8 transition-all duration-1000 delay-100">
               We help:
             </p>
 
@@ -779,7 +1164,7 @@ export default function CannesEventPage() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000"
+                  className="animate-on-scroll  translate-y-8 transition-all duration-1000"
                   style={{ transitionDelay: `${200 + i * 100}ms` }}
                 >
                   <div className="custom-card p-6 hover-lift group">
@@ -796,7 +1181,7 @@ export default function CannesEventPage() {
               ))}
             </div>
 
-            <div className="text-center mt-10 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-600">
+            <div className="text-center mt-10 animate-on-scroll  translate-y-8 transition-all duration-1000 delay-600">
               <p className="text-neutral-400">
                 We've supported 100+ projects across global hackathons, VC
                 workshops, and private pitch days.
@@ -811,11 +1196,11 @@ export default function CannesEventPage() {
         <div className="bg-neutral-900">
           <div className="container-lg py-20">
             <div className="max-w-3xl mx-auto text-center">
-              <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+              <div className="animate-on-scroll  translate-y-8 transition-all duration-1000">
                 <h2 className="heading-lg mb-6">Let's Build Together</h2>
               </div>
 
-              <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-100">
+              <div className="animate-on-scroll  translate-y-8 transition-all duration-1000 delay-100">
                 <p className="text-xl text-neutral-300 mb-8">
                   Partner with us if you want:
                 </p>
@@ -830,7 +1215,7 @@ export default function CannesEventPage() {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000"
+                    className="animate-on-scroll  translate-y-8 transition-all duration-1000"
                     style={{ transitionDelay: `${200 + i * 100}ms` }}
                   >
                     <div className="flex items-center space-x-3 p-4 rounded-lg bg-neutral-800/50 group hover:bg-neutral-800/80 transition-colors duration-300">
@@ -843,7 +1228,7 @@ export default function CannesEventPage() {
                 ))}
               </div>
 
-              <div className="animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000 delay-600">
+              <div className="animate-on-scroll  translate-y-8 transition-all duration-1000 delay-600">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <MagneticButton>
                     <Button
@@ -880,34 +1265,8 @@ export default function CannesEventPage() {
           </div>
         </div>
       </section>
+
+      {/* Venue Information Section */}
     </>
   );
 }
-
-// Add this CSS to your globals.css or as a style tag
-const styles = `
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.7s ease-out;
-  }
-
-  .animate-in {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-
-  .perspective {
-    perspective: 1000px;
-  }
-  
-  @keyframes rotate-y {
-    0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(10deg); }
-  }
-  
-  @keyframes rotate-x {
-    0% { transform: rotateX(0deg); }
-    100% { transform: rotateX(-10deg); }
-  }
-`;

@@ -23,6 +23,7 @@ import { RevealImage } from "@/components/reveal-image";
 import { IconWrapper } from "@/components/icon-wrapper";
 import { StatCard } from "@/components/stat-card";
 import Image from "next/image";
+import { HeroAnnouncement } from "@/components/hero-announcement";
 
 // Define the specific icon names we're using
 type IconName =
@@ -35,15 +36,23 @@ type IconName =
   | "Users";
 
 export default function Home() {
+   const eventDate = new Date("2025-06-29T16:00:00")
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+      <section className="relative min-h-screen flex-col flex items-center pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-950/95 to-neutral-950" />
           <div className="noise" />
         </div>
-
+  <HeroAnnouncement
+              title="New Event"
+              message="Join us at our exclusive Cannes Demo Day during ETHCC [8] Week. Limited spots available for founders and investors."
+              link="/events/cannes-2025"
+              linkText="View Event Details"
+              eventDate={eventDate}
+              showCountdown={true}
+            />
         <div className="container-xl relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <RevealText>
