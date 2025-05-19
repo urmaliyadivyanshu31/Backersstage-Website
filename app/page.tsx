@@ -36,7 +36,7 @@ type IconName =
   | "Users";
 
 export default function Home() {
-   const eventDate = new Date("2025-06-29T16:00:00")
+  const eventDate = new Date("2025-06-29T16:00:00");
   return (
     <>
       {/* Hero Section */}
@@ -45,14 +45,14 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-950/95 to-neutral-950" />
           <div className="noise" />
         </div>
-  <HeroAnnouncement
-              title="New Event"
-              message="Join us at our exclusive Cannes Demo Day during ETHCC [8] Week. Limited spots available for founders and investors."
-              link="/events/cannes-2025"
-              linkText="View Event Details"
-              eventDate={eventDate}
-              showCountdown={true}
-            />
+        <HeroAnnouncement
+          title="New Event"
+          message="Join us at our exclusive Cannes Demo Day during ETHCC [8] Week. Limited spots available for founders and investors."
+          link="/events/cannes-2025"
+          linkText="View Event Details"
+          eventDate={eventDate}
+          showCountdown={true}
+        />
         <div className="container-xl relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <RevealText>
@@ -260,33 +260,22 @@ export default function Home() {
       </section>
 
       {/* Marquee Section */}
-      <ParallaxSection className="py-16" speed={0.1}>
-        <Marquee className="py-4" speed={0.01}>
-          <div className="flex items-center space-x-12 px-8">
-            {[
-              "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747499435662",
-              "https://ik.imagekit.io/d2v6okduo/icon_rev.png?updatedAt=1747499534663",
-              "https://ik.imagekit.io/d2v6okduo/image%2017@3x.png?updatedAt=1747507566763",
-              "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747499435662",
-              "https://ik.imagekit.io/d2v6okduo/icon_rev.png?updatedAt=1747499534663",
-              "https://ik.imagekit.io/d2v6okduo/image%2017@3x.png?updatedAt=1747507566763",
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="text-4xl font-display font-bold text-neutral-800"
-              >
-                <Image
-                  src={item}
-                  alt={`${item} logo`}
-                  height={80}
-                  width={200}
-                />
-                <span className="text-accent mx-4">•</span>
-              </div>
-            ))}
+
+      <div className="flex items-center  mt-8 justify-center space-x-12 px-8">
+        {[
+          "https://ik.imagekit.io/d2v6okduo/image(2).png?updatedAt=1747678784783",
+          "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747679474133",
+          "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747679060514"
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="text-4xl font-display font-bold text-neutral-800"
+          >
+            <Image src={item} alt={`${item} logo`} height={80} width={200} />
+            <span className="text-accent mx-4">•</span>
           </div>
-        </Marquee>
-      </ParallaxSection>
+        ))}
+      </div>
 
       {/* Why BackersStage */}
       <section className="section-padding">
