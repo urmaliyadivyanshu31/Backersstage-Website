@@ -71,7 +71,8 @@ export default function CannesEventPage() {
       title: "Targeted Intros",
       icon: Users,
       color: "from-blue-500/20 to-blue-500/5",
-      description: "VCs aligned by sector & thesis (potential up to $500K)",
+      description: "VCs aligned by sector & thesis (potential up to $150K)",
+      link: "mailto:atharv@backersstage.com",
     },
     {
       title: "Expert Mentorship",
@@ -182,7 +183,7 @@ export default function CannesEventPage() {
                   size="lg"
                   className="bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group"
                 >
-                  <Link href="#apply">
+                  <Link href="https://lu.ma/user/BackersStage">
                     <span className="relative z-10">Apply to Pitch</span>
                     <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                   </Link>
@@ -196,7 +197,7 @@ export default function CannesEventPage() {
                   variant="outline"
                   className="relative overflow-hidden group"
                 >
-                  <Link href="#sponsor">
+                  <Link href="mailto:partner@backersstage.com">
                     <span className="relative z-10">Become a Sponsor</span>
                     <span className="absolute inset-0 bg-accent/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                   </Link>
@@ -633,9 +634,9 @@ export default function CannesEventPage() {
             <div className="text-center mb-16">
               <h2 className="heading-lg mb-4">Proven Format, Ready to Scale</h2>
               <p className="text-neutral-400 text-lg max-w-3xl mx-auto">
-                Our last execution during Token2049 wasn't just another side
-                event. It delivered investor access, media visibility, and real
-                engagement.
+                Our last execution during Token2049 was successfully held with
+                the help of Near Foundation, Camp Network, Atlassoit Secruity
+                and other partners.
               </p>
               <div className="h-1 w-16 bg-accent mt-6 mx-auto" />
             </div>
@@ -644,7 +645,7 @@ export default function CannesEventPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll  translate-y-8 transition-all duration-1000 delay-100 relative rounded-lg overflow-hidden group">
               <Image
-                src="/dubai-event.png"
+                src="https://ik.imagekit.io/d2v6okduo/PXL_20250429_130050697_2_.jpg?updatedAt=1747558918658"
                 alt="Dubai Event"
                 width={600}
                 height={400}
@@ -670,7 +671,7 @@ export default function CannesEventPage() {
                     <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/5 rounded-xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
                     <div className="custom-card p-6 relative z-10 border border-accent/20 hover:border-accent/40 transition-colors duration-500">
                       <div className="text-4xl font-display font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-500 origin-left">
-                        700+
+                        500+
                       </div>
                       <p className="text-neutral-400 group-hover:text-neutral-300 transition-colors duration-500">
                         Total Registrations
@@ -682,7 +683,7 @@ export default function CannesEventPage() {
                     <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/5 rounded-xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
                     <div className="custom-card p-6 relative z-10 border border-accent/20 hover:border-accent/40 transition-colors duration-500">
                       <div className="text-4xl font-display font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-500 origin-left">
-                        40+
+                        50+
                       </div>
                       <p className="text-neutral-400 group-hover:text-neutral-300 transition-colors duration-500">
                         VCs & Angels Engaged
@@ -892,7 +893,12 @@ export default function CannesEventPage() {
                                   className="bg-accent/20 hover:bg-accent/30 text-accent border border-accent/30"
                                 >
                                   <Link
-                                    href="#apply"
+                                    href={
+                                      !tab.link
+                                        ? `https://lu.ma/user/BackersStage`
+                                        : tab.link
+                                    }
+                                    target="_blank"
                                     className="flex items-center"
                                   >
                                     <span>Apply Now</span>
@@ -1237,7 +1243,7 @@ export default function CannesEventPage() {
                       className="bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group"
                     >
                       <Link
-                        href="https://forms.gle/YourFormLink"
+                        href="https://lu.ma/user/BackersStage"
                         target="_blank"
                       >
                         <span className="relative z-10">Apply to Pitch</span>

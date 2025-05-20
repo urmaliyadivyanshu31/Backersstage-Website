@@ -83,20 +83,6 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="premium-card p-8 text-center">
               <div className="mb-6 text-gold bg-gold/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                <Phone className="h-8 w-8" />
-              </div>
-              <h3 className="heading-sm mb-3">Call Us</h3>
-              <p className="text-muted-foreground mb-2">Mon-Fri, 9am-6pm</p>
-              <a
-                href="tel:+15551234567"
-                className="text-lg font-medium hover:text-gold transition-colors"
-              >
-                +1 (555) 123-4567
-              </a>
-            </div>
-
-            <div className="premium-card p-8 text-center">
-              <div className="mb-6 text-gold bg-gold/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
                 <Mail className="h-8 w-8" />
               </div>
               <h3 className="heading-sm mb-3">Email Us</h3>
@@ -118,9 +104,9 @@ export default function ContactPage() {
               <h3 className="heading-sm mb-3">Visit Us</h3>
               <p className="text-muted-foreground mb-2">Our headquarters</p>
               <address className="text-lg font-medium not-italic">
-                123 Premium Street
+                Our team is in
                 <br />
-                Luxury City, LC 10001
+                Dubai, Australia and India
               </address>
             </div>
           </div>
@@ -247,39 +233,7 @@ export default function ContactPage() {
               </form>
             </div>
 
-            <div>
-              <SectionHeading
-                title="Our Location"
-                subtitle="Visit our headquarters or reach out to us online."
-              />
-
-              <div className="relative h-[400px] rounded-lg overflow-hidden mb-6">
-                {/* This would typically be a map component */}
-                <div className="absolute inset-0 bg-muted flex items-center justify-center">
-                  <p className="text-muted-foreground">
-                    Interactive Map Would Be Here
-                  </p>
-                </div>
-              </div>
-
-              <div className="premium-card p-6">
-                <h3 className="heading-sm mb-4">Office Hours</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex justify-between">
-                    <span>Monday - Friday:</span>
-                    <span>9:00 AM - 6:00 PM</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Saturday:</span>
-                    <span>10:00 AM - 4:00 PM</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Sunday:</span>
-                    <span>Closed</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+           
           </div>
         </div>
       </section>

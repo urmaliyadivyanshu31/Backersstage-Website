@@ -136,7 +136,7 @@ export default function EventsPage() {
                 </Button>
 
                 <Button asChild variant="outline">
-                  <Link href="/events/cannes-2025#apply">Apply to Pitch</Link>
+                  <Link href="https://lu.ma/user/BackersStage">Apply to Pitch</Link>
                 </Button>
               </div>
             </div>

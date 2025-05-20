@@ -65,7 +65,7 @@ export default function AboutPage() {
             </div>
 
             <RevealImage
-              src="/about-team.png"
+              src="https://ik.imagekit.io/d2v6okduo/PXL_20250429_132947890.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559023669"
               alt="BackersStage Team"
               width={600}
               height={600}

@@ -126,7 +126,7 @@ export default function MediaPage() {
       </section>
 
       {/* Media Logos */}
-      <section className="section-padding bg-cool-gray">
+      {/* <section className="section-padding bg-cool-gray">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
             {[
@@ -152,7 +152,7 @@ export default function MediaPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Articles */}
       <section className="section-padding bg-off-white">

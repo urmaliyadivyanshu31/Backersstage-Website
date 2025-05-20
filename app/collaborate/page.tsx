@@ -39,7 +39,7 @@ export default function CollaboratePage() {
                   asChild
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group mt-auto"
                 >
-                  <Link href="https://forms.gle/YourFormLink" target="_blank">
+                  <Link href="https://lu.ma/user/BackersStage" target="_blank">
                     <span className="relative z-10 flex items-center">
                       Apply to Pitch
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -68,7 +68,7 @@ export default function CollaboratePage() {
                   asChild
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group mt-auto"
                 >
-                  <Link href="https://sponsors.backersatge.com" target="_blank">
+                  <Link href="/events/cannes-2025" target="_blank">
                     <span className="relative z-10 flex items-center">
                       Host a Demo Day
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -183,9 +183,9 @@ export default function CollaboratePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-dark-contrast text-white hover:bg-dark-contrast/90"
+                className="bg-accent  hover:bg-dark-contrast/90"
               >
-                <Link href="https://forms.gle/YourFormLink" target="_blank">
+                <Link href="https://lu.ma/user/BackersStage" target="_blank">
                   Apply Now
                 </Link>
               </Button>
@@ -195,7 +195,7 @@ export default function CollaboratePage() {
                 variant="outline"
                 className="border-accent/20 text-accent hover:bg-accent/10 relative overflow-hidden group"
               >
-                <Link href="/contact">
+                <Link href="mailto:partner@backersstage.com">
                   <span className="relative z-10">Contact Us</span>
                   <span className="absolute inset-0 bg-accent/5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                 </Link>
