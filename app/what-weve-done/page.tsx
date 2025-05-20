@@ -140,8 +140,6 @@ export default function WhatWeveDonePage() {
                 "https://ik.imagekit.io/d2v6okduo/PXL_20250429_132947890.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559023669",
                 "https://ik.imagekit.io/d2v6okduo/PXL_20250429_130934569_1_(1).jpg?updatedAt=1747559181346",
                 "https://ik.imagekit.io/d2v6okduo/PXL_20250429_132802494.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559217287",
-                "https://ik.imagekit.io/d2v6okduo/PXL_20250429_125427299_2_.jpg?updatedAt=1747559243315",
-                "https://ik.imagekit.io/d2v6okduo/PXL_20250429_132802494.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559217287",
                 "https://ik.imagekit.io/d2v6okduo/PXL_20250429_141537936.MP_1_.jpg?updatedAt=1747559334860",
               ].map((item, i) => (
                 <div

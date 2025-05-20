@@ -68,7 +68,7 @@ export default function CollaboratePage() {
                   asChild
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group mt-auto"
                 >
-                  <Link href="https://forms.gle/YourFormLink" target="_blank">
+                  <Link href="https://sponsors.backersatge.com" target="_blank">
                     <span className="relative z-10 flex items-center">
                       Host a Demo Day
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -97,7 +97,7 @@ export default function CollaboratePage() {
                   asChild
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group mt-auto"
                 >
-                  <Link href="https://forms.gle/YourFormLink" target="_blank">
+                  <Link href="mailTo:partner@backersstage.com" target="_blank">
                     <span className="relative z-10 flex items-center">
                       Partner With Us
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
