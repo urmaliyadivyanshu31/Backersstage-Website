@@ -438,7 +438,9 @@ export function InteractiveVenueMap({ className }: VenueMapProps) {
     >
       <div className="p-4 border-b border-neutral-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h3 className="text-xl font-bold">Espace Croisette Venue Map</h3>
+          <h3 className="text-xl font-bold">
+            Canopy by Hilton Cannes, Cannes, France
+          </h3>
           <p className="text-sm text-neutral-400">
             Interactive floor plan of the event space
           </p>

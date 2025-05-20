@@ -145,7 +145,7 @@ export default function CannesEventPage() {
               <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm">
                 <MapPin className="h-4 w-4 text-accent" />
                 <span className="text-sm">
-                  Espace Croisette, Cannes, France
+                  Canopy by Hilton Cannes, Cannes, France
                 </span>
               </div>
               <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm">
@@ -263,7 +263,7 @@ export default function CannesEventPage() {
                 />
               )}
             </button>
-            <button
+            {/* <button
               className={`px-4 py-2 font-medium text-sm relative ${
                 activeInfoTab === "travel"
                   ? "text-white"
@@ -278,7 +278,7 @@ export default function CannesEventPage() {
                   className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
                 />
               )}
-            </button>
+            </button> */}
           </div>
 
           {/* Tab Content */}
@@ -290,8 +290,8 @@ export default function CannesEventPage() {
                   <div className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-xl p-6">
                     <h3 className="text-xl font-bold mb-4">Venue Layout</h3>
                     <p className="text-neutral-300">
-                      The Espace Croisette venue features dedicated areas for
-                      presentations, networking, and private meetings.
+                      The Canopy by Hilton Cannes venue features dedicated areas
+                      for presentations, networking, and private meetings.
                     </p>
                     {/* Add more venue details here */}
                   </div>
@@ -304,13 +304,14 @@ export default function CannesEventPage() {
                 <div className="lg:col-span-2 space-y-8">
                   <div>
                     <h3 className="text-xl font-bold mb-4">
-                      About Espace Croisette
+                      About Canopy by Hilton Cannes
                     </h3>
                     <p className="text-neutral-300 mb-4">
-                      Espace Croisette is a premier event venue located in the
-                      heart of Cannes, France. Known for its elegant design and
-                      versatile spaces, it regularly hosts high-profile events
-                      during major Cannes festivals and conferences.
+                      Canopy by Hilton Cannes is a premier event venue located
+                      in the heart of Cannes, France. Known for its elegant
+                      design and versatile spaces, it regularly hosts
+                      high-profile events during major Cannes festivals and
+                      conferences.
                     </p>
                     <p className="text-neutral-300">
                       For the BackersStage Demo Day, we've configured the space
@@ -372,30 +373,30 @@ export default function CannesEventPage() {
                     <div className="space-y-4">
                       {[
                         {
-                          time: "3:30 PM - 4:00 PM",
+                          time: "4:00 PM - 4:30 PM",
                           title: "Registration & Welcome",
                           description:
                             "Check-in, badge collection, and welcome refreshments",
                         },
                         {
-                          time: "4:00 PM - 4:15 PM",
+                          time: "4:30 PM - 4:45 PM",
                           title: "Opening Remarks",
                           description: "Introduction and event overview",
                         },
                         {
-                          time: "4:15 PM - 5:30 PM",
+                          time: "4:45 PM -  PM",
                           title: "Builder Showcases",
                           description:
                             "Technical demonstrations from selected projects",
                         },
                         {
-                          time: "5:30 PM - 6:15 PM",
+                          time: "6:00 PM - 6:45 PM",
                           title: "Panel Discussion",
                           description:
                             "Industry experts discuss the future of Web3 infrastructure",
                         },
                         {
-                          time: "6:15 PM - 7:30 PM",
+                          time: "6:45 PM - 8:00 PM",
                           title: "Networking Reception",
                           description:
                             "Connect with founders, investors, and industry leaders",
@@ -426,20 +427,6 @@ export default function CannesEventPage() {
                   <div className="sticky top-24 space-y-6">
                     <div className="rounded-xl overflow-hidden bg-neutral-800">
                       {/* Fallback background */}
-                      <div className="w-full h-[250px] bg-neutral-800 flex items-center justify-center">
-                        <span className="text-neutral-500">Venue Image</span>
-                      </div>
-                      <Image
-                        src="/luxury-cannes-venue.png"
-                        alt="Espace Croisette"
-                        width={600}
-                        height={400}
-                        className="w-full h-auto object-cover absolute inset-0"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = "none";
-                        }}
-                      />
                     </div>
 
                     <div className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-xl p-6">
@@ -451,9 +438,7 @@ export default function CannesEventPage() {
                           <div className="text-sm text-neutral-400">
                             Address
                           </div>
-                          <div>
-                            Espace Croisette, La Croisette, Cannes, France
-                          </div>
+                          <div>Canopy by Hilton Cannes, Cannes, France</div>
                         </div>
                         <div>
                           <div className="text-sm text-neutral-400">
@@ -486,7 +471,7 @@ export default function CannesEventPage() {
               </div>
             )}
 
-            {activeInfoTab === "travel" && (
+            {/* {activeInfoTab === "travel" && (
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-8">
                   <div>
@@ -551,7 +536,7 @@ export default function CannesEventPage() {
                           Cannes is well-connected by rail to major French and
                           European cities. The main station, Gare de Cannes, is
                           located in the city center, approximately 1 km from
-                          Espace Croisette.
+                          Canopy by Hilton Cannes.
                         </p>
                         <div className="space-y-2">
                           <div className="flex items-start gap-2">
@@ -622,7 +607,7 @@ export default function CannesEventPage() {
                   </div>
                 </div>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </section>
@@ -695,7 +680,7 @@ export default function CannesEventPage() {
                     <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent/5 rounded-xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
                     <div className="custom-card p-6 relative z-10 border border-accent/20 hover:border-accent/40 transition-colors duration-500">
                       <div className="text-4xl font-display font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-500 origin-left">
-                        300+
+                        100+
                       </div>
                       <p className="text-neutral-400 group-hover:text-neutral-300 transition-colors duration-500">
                         Projects Applied
@@ -948,8 +933,8 @@ export default function CannesEventPage() {
                   Premium Venue
                 </h3>
                 <p className="text-neutral-400 mb-4">
-                  Espace Croisette provides an elegant setting for meaningful
-                  connections.
+                  Canopy by Hilton Cannes provides an elegant setting for
+                  meaningful connections.
                 </p>
                 <div className="h-0.5 w-0 bg-accent group-hover:w-full transition-all duration-500"></div>
               </div>
@@ -1007,7 +992,7 @@ export default function CannesEventPage() {
                   Title Sponsor
                 </h3>
                 <div className="text-3xl font-display font-bold text-accent mb-6">
-                  $15,000
+                  $16,000
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -1059,7 +1044,7 @@ export default function CannesEventPage() {
                   Ecosystem Partner
                 </h3>
                 <div className="text-3xl font-display font-bold text-accent mb-6">
-                  $5,000
+                  $6,000
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -1109,7 +1094,7 @@ export default function CannesEventPage() {
                   Custom
                 </h3>
                 <div className="text-3xl font-display font-bold text-accent mb-6">
-                  Starting $999
+                  Starting $2,499
                 </div>
 
                 <p className="text-neutral-400 mb-8 group-hover:text-neutral-300 transition-colors duration-300">
@@ -1189,7 +1174,7 @@ export default function CannesEventPage() {
 
             <div className="text-center mt-10 animate-on-scroll  translate-y-8 transition-all duration-1000 delay-600">
               <p className="text-neutral-400">
-                We've supported 100+ projects across global hackathons, VC
+                We've supported 5+ projects across global hackathons, VC
                 workshops, and private pitch days.
               </p>
             </div>
