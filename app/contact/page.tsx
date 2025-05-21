@@ -233,7 +233,44 @@ export default function ContactPage() {
               </form>
             </div>
 
-           
+            <div className="h-full">
+              <div className="premium-card p-6 h-full">
+                <div className="relative w-full h-[600px] rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2892.505797766098!2d7.017899715749611!3d43.55082927912487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ce81908167df81%3A0x417434919e92508c!2sCanopy%20by%20Hilton%20Cannes!5e0!3m2!1sen!2sin!4v1647355840475!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg"
+                  ></iframe>
+                </div>
+
+                <div className="mt-6 space-y-4">
+                  <h3 className="heading-sm">Our Location</h3>
+                  <p className="text-muted-foreground">
+                    Canopy by Hilton Cannes
+                    <br />
+                    La Croisette, 06400 Cannes
+                    <br />
+                    France
+                  </p>
+                  <Button asChild variant="outline" className="w-full">
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Canopy%20by%20Hilton%20Cannes&query_place_id=ChIJ4dn_ZKGBzhIRgUyS4Z00dEE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center"
+                    >
+                      <MapPin className="mr-2 h-4 w-4" />
+                      Open in Google Maps
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

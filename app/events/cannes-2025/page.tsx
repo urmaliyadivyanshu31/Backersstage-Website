@@ -150,7 +150,7 @@ export default function CannesEventPage() {
               </div>
               <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm">
                 <Users className="h-4 w-4 text-accent" />
-                <span className="text-sm">300+ Attendees</span>
+                <span className="text-sm">100+ Projects</span>
               </div>
               <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm">
                 <Zap className="h-4 w-4 text-accent" />
