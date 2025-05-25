@@ -4,6 +4,15 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const mediaPartners = [
+  "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1748165097921",
+  "https://ik.imagekit.io/d2v6okduo/image.png",
+  "https://ik.imagekit.io/d2v6okduo/b.png",
+  "https://ik.imagekit.io/d2v6okduo/logo_mark_text_light_space.png",
+  "https://ik.imagekit.io/d2v6okduo/DAO-logo%20White.png",
+  "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1748165041677",
+];
+
 const articleData = [
   {
     title: "🚀 Exciting News from CoinGabbar!",
@@ -126,33 +135,26 @@ export default function MediaPage() {
       </section>
 
       {/* Media Logos */}
-      {/* <section className="section-padding bg-cool-gray">
+      <section className="section-padding">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {[
-              "COIN GABBAR",
-              "Unstoppable24x7",
-              "Nukelancer",
-              "HER DAO",
-              "Blockchained India",
-              "Bhopal DAO",
-            ].map((partner, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
+            {mediaPartners.map((logo, index) => (
               <div
                 key={index}
-                className="glass-card p-6 rounded-lg flex items-center justify-center h-32"
+                className="glass-card p-6 rounded-lg flex items-center justify-center h-32 group hover:shadow-lg transition-shadow duration-300"
               >
                 <Image
-                  src={`/abstract-geometric-shapes.png?height=120&width=200&query=${partner} logo`}
-                  alt={partner}
+                  src={logo}
+                  alt={`Partner logo ${index + 1}`}
                   width={120}
                   height={60}
-                  className="object-contain"
+                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
                 />
               </div>
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Featured Articles */}
       {/* <section className="section-padding bg-off-white">

@@ -134,6 +134,16 @@
     @apply absolute -inset-0.5 rounded-lg bg-gradient-to-r from-accent/20 to-accent/0 opacity-0 blur transition duration-1000 group-hover:opacity-100;
     z-index: -1;
   }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
 }
 
 /* Custom Cursor */

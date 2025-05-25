@@ -265,7 +265,8 @@ export default function Home() {
         {[
           "https://ik.imagekit.io/d2v6okduo/image(2).png?updatedAt=1747678784783",
           "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747679474133",
-          "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747679060514"
+          "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747679060514",
+        
         ].map((item, i) => (
           <div
             key={i}

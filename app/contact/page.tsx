@@ -69,7 +69,7 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="heading-xl mb-6">Contact Us</h1>
             <p className="body-lg text-muted-foreground mb-8">
-              We'd love to hear from you. Get in touch with our team to discuss
+              We'd love to hear from you, get in touch with our team to discuss
               your project or answer any questions you may have.
             </p>
             <div className="h-1 w-20 bg-gold mx-auto" />
@@ -104,7 +104,7 @@ export default function ContactPage() {
               <h3 className="heading-sm mb-3">Visit Us</h3>
               <p className="text-muted-foreground mb-2">Our headquarters</p>
               <address className="text-lg font-medium not-italic">
-                Our team is in
+
                
                 Dubai & Australia
               </address>
