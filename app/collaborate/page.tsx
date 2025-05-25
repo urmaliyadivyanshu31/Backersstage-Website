@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export default function CollaboratePage() {
   return (
     <div className="flex flex-col min-h-screen max-w-5xl px-8 items-center mx-auto">
-      <section className="section-padding  bg-off-white">
+      <section className="py-10 mt-32  bg-off-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-6">Collaborate with Us</h1>
@@ -18,9 +18,9 @@ export default function CollaboratePage() {
       </section>
 
       {/* Collaboration Options */}
-      <section className="section-padding bg-cool-gray">
+      <section className=" bg-cool-gray">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid mt-12 grid-cols-1 md:grid-cols-3 gap-6">
             {/* For Startups */}
             <div className="glass relative group overflow-hidden rounded-lg transition-all duration-500 hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] h-full">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

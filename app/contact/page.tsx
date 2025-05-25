@@ -78,7 +78,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div className="premium-card p-8 text-center">
@@ -105,8 +105,8 @@ export default function ContactPage() {
               <p className="text-muted-foreground mb-2">Our headquarters</p>
               <address className="text-lg font-medium not-italic">
                 Our team is in
-                <br />
-                Dubai, Australia and India
+               
+                Dubai & Australia
               </address>
             </div>
           </div>
@@ -228,7 +228,7 @@ export default function ContactPage() {
                       Sending Message...
                     </span>
                   ) : (
-                    <span className="flex bg-accent px-5 py-2 rounded items-center">
+                    <span className="flex bg-accent text-black px-5 py-2 rounded items-center">
                       <Send className="mr-2 h-5 w-5" />
                       Send Message
                     </span>
