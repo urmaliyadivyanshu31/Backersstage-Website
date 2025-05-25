@@ -1,7 +1,7 @@
-import Link from "next/link"
-import { ArrowUpRight, Send } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import Link from "next/link";
+import { ArrowUpRight, Send, SendHorizonal } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export function Footer() {
   return (
@@ -15,8 +15,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-neutral-400 max-w-xs">
-              A Web3-native growth ecosystem platform connecting early-stage blockchain startups w/- global investors,
-              mentors, and partners.
+              A Web3-native growth ecosystem platform connecting early-stage
+              blockchain startups w/- global investors, mentors, and partners.
             </p>
             <div className="flex items-center space-x-4">
               <Link
@@ -131,7 +131,9 @@ export function Footer() {
 
           <div>
             <h3 className="font-display text-lg font-bold mb-6">Subscribe</h3>
-            <p className="text-neutral-400 mb-4">Stay updated with our latest news and events.</p>
+            <p className="text-neutral-400 mb-4">
+              Stay updated with our latest news and events.
+            </p>
             <div className="flex flex-col sm:flex-row gap-2">
               <div className="relative flex-grow">
                 <Input
@@ -144,22 +146,9 @@ export function Footer() {
                   variant="ghost"
                   className="absolute right-1 top-1/2 -translate-y-1/2 text-accent hover:text-accent/80 hover:bg-transparent p-1"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-5 w-5"
-                  >
-                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                  </svg>
-                  <span className="sr-only">Subscribe</span>
+                  <div className="-rotate-45-">
+                    <SendHorizonal />
+                  </div>
                 </Button>
               </div>
             </div>
@@ -171,15 +160,21 @@ export function Footer() {
             &copy; {new Date().getFullYear()} BackersStage. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <Link href="/privacy" className="text-sm text-neutral-400 hover:text-accent transition-colors">
+            <Link
+              href="/privacy-policy"
+              className="text-sm text-neutral-400 hover:text-accent transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-neutral-400 hover:text-accent transition-colors">
+            <Link
+              href="/privacy-policy"
+              className="text-sm text-neutral-400 hover:text-accent transition-colors"
+            >
               Terms of Service
             </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

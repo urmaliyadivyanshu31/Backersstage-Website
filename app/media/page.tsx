@@ -114,12 +114,12 @@ export default function MediaPage() {
   return (
     <div className="flex flex-col min-h-screen px-8 max-w-5xl items-center w-full mx-auto">
       {/* Hero Section */}
-      <section className="section-padding bg-off-white">
+      <section className="pt-32 bg-off-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-6">Media Mentions</h1>
             <p className="text-xl text-muted-foreground">
-              BackersStage in the press and across the Web3 ecosystem.
+              BackersStage in the press and across the web3 ecosystem
             </p>
           </div>
         </div>
@@ -155,7 +155,7 @@ export default function MediaPage() {
       </section> */}
 
       {/* Featured Articles */}
-      <section className="section-padding bg-off-white">
+      {/* <section className="section-padding bg-off-white">
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-center mb-12">
             Media Mentions
@@ -208,10 +208,10 @@ export default function MediaPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Press Kit */}
-      <section className="section-padding bg-banana-cream/30">
+      <section className="my-12 bg-banana-cream/30">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Press Kit</h2>
