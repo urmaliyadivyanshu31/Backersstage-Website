@@ -1,15 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import { Calendar, Users, Building } from "lucide-react";
+import {
+  Calendar,
+  Users,
+  Building,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { RevealText } from "@/components/reveal-text";
 import { SectionHeading } from "@/components/section-heading";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function WhatWeveDonePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const totalSlides = 5; // Update this to match your number of images
 
   const scrollToSlide = (index: number) => {
     if (scrollRef.current) {
@@ -30,6 +37,26 @@ export default function WhatWeveDonePage() {
       const newSlide = Math.round(scrollPosition / slideWidth);
       setCurrentSlide(newSlide);
     }
+  };
+
+  // Add autoplay functionality
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const nextSlide = (currentSlide + 1) % totalSlides;
+      scrollToSlide(nextSlide);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(timer);
+  }, [currentSlide]);
+
+  const nextSlide = () => {
+    const nextIndex = (currentSlide + 1) % totalSlides;
+    scrollToSlide(nextIndex);
+  };
+
+  const previousSlide = () => {
+    const prevIndex = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+    scrollToSlide(prevIndex);
   };
 
   return (
@@ -130,6 +157,23 @@ export default function WhatWeveDonePage() {
           />
 
           <div className="relative overflow-hidden">
+            {/* Add Arrow Controls */}
+            <button
+              onClick={previousSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center transition-colors"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-6 h-6 text-white" />
+            </button>
+
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center transition-colors"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-6 h-6 text-white" />
+            </button>
+
             <div
               ref={scrollRef}
               onScroll={handleScroll}
@@ -162,7 +206,7 @@ export default function WhatWeveDonePage() {
             </div>
 
             <div className="flex justify-center mt-6 space-x-2">
-              {[...Array(7)].map((_, i) => (
+              {[...Array(totalSlides)].map((_, i) => (
                 <button
                   key={i}
                   onClick={() => scrollToSlide(i)}

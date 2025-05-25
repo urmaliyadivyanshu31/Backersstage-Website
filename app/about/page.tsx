@@ -31,7 +31,7 @@ export default function AboutPage() {
       </section>
 
       {/* What is BackersStage */}
-      <section className="section-padding">
+      <section className="py-24">
         <div className="container-lg">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder's Note */}
-      {/* <section className="section-padding">
+      {/* <section className="py-24">
         <div className="container-lg">
           <SectionHeading
             title="Founder's Note"
@@ -171,7 +171,7 @@ export default function AboutPage() {
       </section> */}
 
       {/* Core Beliefs */}
-      <section className="section-padding bg-neutral-900/30">
+      <section className="py-24 bg-neutral-900/30">
         <div className="container-lg">
           <SectionHeading
             title="Core Beliefs"
@@ -195,7 +195,7 @@ export default function AboutPage() {
             />
 
             <FeatureCard
-              title="Long-Term Support"
+              title="Ongoing Support"
               description="Our commitment extends beyond introductions. We provide ongoing support to help projects navigate their growth journey."
               icon="Target"
               delay={0.3}
@@ -205,7 +205,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      {/* <section className="section-padding bg-neutral-900/30">
+      {/* <section className="py-24 bg-neutral-900/30">
         <div className="container-lg">
           <SectionHeading
             title="Our Team"
@@ -220,7 +220,7 @@ export default function AboutPage() {
       </section> */}
 
       {/* Values Section */}
-      <section className="section-padding">
+      {/* <section className="py-24">
         <div className="container-lg">
           <SectionHeading
             title="Our Values"
@@ -263,6 +263,46 @@ export default function AboutPage() {
                 ideas to successful, sustainable businesses.
               </p>
             </div>
+          </div>
+        </div>
+      </section> */}
+
+      <section className="py-24">
+        <div className="container-lg">
+          <SectionHeading
+            title="Why BackersStage"
+            subtitle="Our unique approach to connecting early-stage blockchain projects with the resources they need to succeed."
+            center
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <FeatureCard
+              title="VC-Project Matching"
+              description="We connect promising projects with the right investors based on mutual fit and growth potential."
+              icon="Handshake"
+              delay={0.1}
+            />
+
+            <FeatureCard
+              title="Event-led Growth"
+              description="Our Demo Days create high-impact opportunities for startups to showcase their vision to relevant stakeholders."
+              icon="Calendar"
+              delay={0.2}
+            />
+
+            <FeatureCard
+              title="Curation Over Hype"
+              description="We focus on quality over quantity, ensuring only the most promising projects reach our platform."
+              icon="Filter"
+              delay={0.3}
+            />
+
+            <FeatureCard
+              title="Partner First Mindset"
+              description="We build long-term relationships that benefit all parties in the ecosystem."
+              icon="Users"
+              delay={0.4}
+            />
           </div>
         </div>
       </section>

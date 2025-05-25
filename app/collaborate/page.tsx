@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, Building, Rocket, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Building,
+  ChartColumnBig,
+  Rocket,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function CollaboratePage() {
@@ -26,7 +32,7 @@ export default function CollaboratePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="p-6 flex flex-col h-full">
                 <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
-                  <Rocket className="h-6 w-6 text-accent" />
+                  <ChartColumnBig className="h-6 w-6 text-accent" />
                 </div>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors duration-300">
                   For Startups
@@ -68,7 +74,7 @@ export default function CollaboratePage() {
                   asChild
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group mt-auto"
                 >
-                  <Link href="/events/cannes-2025" target="_blank">
+                  <Link href="/events/cannes-2025#sponsor" target="_blank">
                     <span className="relative z-10 flex items-center">
                       Host a Demo Day
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -151,8 +157,8 @@ export default function CollaboratePage() {
               <ul className="space-y-4">
                 {[
                   "Access to curated, high-quality projects",
-                  "Efficient deal flow through our vetting process",
-                  "Network with other leading investors and partners",
+                  "Efficient deal flow through our process",
+                  "Network w/- other leading investors ",
                   "Co-investment opportunities",
                 ].map((benefit, i) => (
                   <li key={i} className="flex items-start group/item">
@@ -171,7 +177,7 @@ export default function CollaboratePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-off-white">
+      <section className="mb-24 bg-off-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>

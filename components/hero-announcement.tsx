@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { X, ArrowRight, Calendar } from "lucide-react"
-import Link from "next/link"
-import { CountdownTimer } from "./countdown-timer"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ArrowRight, Calendar } from "lucide-react";
+import Link from "next/link";
+import { CountdownTimer } from "./countdown-timer";
 
 interface HeroAnnouncementProps {
-  title: string
-  message: string
-  link: string
-  linkText?: string
-  dismissible?: boolean
-  expiryDays?: number
-  eventDate?: Date | string
-  showCountdown?: boolean
+  title: string;
+  message: string;
+  link: string;
+  linkText?: string;
+  dismissible?: boolean;
+  expiryDays?: number;
+  eventDate?: Date | string;
+  showCountdown?: boolean;
 }
 
 export function HeroAnnouncement({
@@ -23,35 +23,23 @@ export function HeroAnnouncement({
   link,
   linkText = "Learn more",
   dismissible = true,
-  expiryDays = 7,
   eventDate,
   showCountdown = false,
-}: HeroAnnouncementProps) {
-  const [isVisible, setIsVisible] = useState(false)
-  const storageKey = `hero-announcement-dismissed-${title.substring(0, 20)}`
+}: Omit<HeroAnnouncementProps, "expiryDays">) {
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if the announcement has been dismissed
-    const isDismissed = localStorage.getItem(storageKey)
+    // Add a slight delay for better UX
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 800);
 
-    if (!isDismissed) {
-      // Add a slight delay for better UX
-      const timer = setTimeout(() => {
-        setIsVisible(true)
-      }, 800)
-
-      return () => clearTimeout(timer)
-    }
-  }, [storageKey])
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleDismiss = () => {
-    setIsVisible(false)
-
-    // Set expiry date
-    const expiryDate = new Date()
-    expiryDate.setDate(expiryDate.getDate() + expiryDays)
-    localStorage.setItem(storageKey, expiryDate.toISOString())
-  }
+    setIsVisible(false);
+  };
 
   return (
     <AnimatePresence>
@@ -71,7 +59,9 @@ export function HeroAnnouncement({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="h-1 w-5 bg-accent rounded-full"></div>
-                  <span className="text-xs uppercase tracking-wider text-accent font-medium">{title}</span>
+                  <span className="text-xs uppercase tracking-wider text-accent font-medium">
+                    {title}
+                  </span>
                 </div>
 
                 {dismissible && (
@@ -93,14 +83,19 @@ export function HeroAnnouncement({
                 <div className="mt-4 mb-2">
                   <div className="flex items-center gap-2 mb-2">
                     <Calendar className="h-4 w-4 text-accent" />
-                    <span className="text-xs text-neutral-400">Event starts in:</span>
+                    <span className="text-xs text-neutral-400">
+                      Event starts in:
+                    </span>
                   </div>
                   <CountdownTimer targetDate={eventDate} />
                 </div>
               )}
 
               <div className="mt-3 flex justify-end">
-                <Link href={link} className="text-sm font-medium text-accent flex items-center hover:underline group">
+                <Link
+                  href={link}
+                  className="text-sm font-medium text-accent flex items-center hover:underline group"
+                >
                   {linkText}
                   <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
@@ -110,5 +105,5 @@ export function HeroAnnouncement({
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

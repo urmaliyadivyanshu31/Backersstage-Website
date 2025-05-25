@@ -20,7 +20,7 @@ export function Footer() {
             </p>
             <div className="flex items-center space-x-4">
               <Link
-                href="https://t.me/backersstage"
+                href="https://t.me/div3103"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center text-neutral-400 hover:text-accent transition-colors"

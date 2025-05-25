@@ -5,12 +5,36 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const mediaPartners = [
-  "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1748165097921",
-  "https://ik.imagekit.io/d2v6okduo/image.png",
-  "https://ik.imagekit.io/d2v6okduo/b.png",
-  "https://ik.imagekit.io/d2v6okduo/logo_mark_text_light_space.png",
-  "https://ik.imagekit.io/d2v6okduo/DAO-logo%20White.png",
-  "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1748165041677",
+  {
+    image: "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1748165097921",
+    link: "https://x.com/coin_gabbar_",
+    name: "CoinGabbar",
+  },
+  {
+    image: "https://ik.imagekit.io/d2v6okduo/image.png",
+    link: "https://x.com/_HerDAO",
+    name: "Her DAO",
+  },
+  {
+    image: "https://ik.imagekit.io/d2v6okduo/b.png",
+    link: "https://x.com/blockchainedind",
+    name: "Blochained India",
+  },
+  {
+    image: "https://ik.imagekit.io/d2v6okduo/logo_mark_text_light_space.png",
+    link: "https://x.com/WizzHQ",
+    name: "WizzHQ",
+  },
+  {
+    image: "https://ik.imagekit.io/d2v6okduo/DAO-logo%20White.png",
+    link: "https://x.com/Bhopal_DAO",
+    name: "Bhopal DAO",
+  },
+  {
+    image: "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1748165041677",
+    link: "https://x.com/AarambhLabs",
+    name: "Aarambh Labs",
+  },
 ];
 
 const articleData = [
@@ -138,19 +162,22 @@ export default function MediaPage() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
-            {mediaPartners.map((logo, index) => (
-              <div
+            {mediaPartners.map((partner, index) => (
+              <Link
                 key={index}
-                className="glass-card p-6 rounded-lg flex items-center justify-center h-32 group hover:shadow-lg transition-shadow duration-300"
+                href={partner.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card p-6 rounded-lg flex items-center justify-center h-32 group hover:shadow-lg transition-all duration-300"
               >
                 <Image
-                  src={logo}
-                  alt={`Partner logo ${index + 1}`}
+                  src={partner.image}
+                  alt={partner.name}
                   width={120}
                   height={60}
-                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                  className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
                 />
-              </div>
+              </Link>
             ))}
           </div>
         </div>

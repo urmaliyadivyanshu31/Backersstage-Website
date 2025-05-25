@@ -10,6 +10,7 @@ import {
   Zap,
   Construction,
   Clock,
+  MapPin,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -40,7 +41,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex-col flex items-center pt-32 pb-20 overflow-hidden">
+      <section className="relative min-h-screen justify-center flex-col flex items-center pt-32 pb-20 overflow-hidden transition-all ">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-950/95 to-neutral-950" />
           <div className="noise" />
@@ -224,7 +225,96 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="section-padding bg-neutral-900/30">
+        <div className="container-lg">
+          <SectionHeading
+            title="Upcoming Event"
+            subtitle="Join us at our next event in Cannes, France during ETHCC [8] Week."
+            center
+          />
 
+          <div className="custom-card p-8 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] transition-all duration-500">
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="relative rounded-lg overflow-hidden">
+                {/* Replace img with next/image for better optimization */}
+                <Image
+                  src="https://ik.imagekit.io/d2v6okduo/WhatsApp%20Image%202025-05-25%20at%2015.45.05_7bfd64cd.jpg"
+                  alt="Cannes Event"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover rounded-lg"
+                  priority
+                />
+                <div className="absolute top-4 left-4">
+                  <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
+                    June 29, 2025
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className="heading-md group-hover:text-accent transition-colors duration-300">
+                  BackersStage: Founder-Powered Demo Day
+                </h3>
+
+                <div className="flex flex-wrap gap-4 mb-4">
+                  <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm">
+                    <Calendar className="h-4 w-4 text-accent" />
+                    <span className="text-sm">June 29, 2025</span>
+                  </div>
+                  <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm">
+                    <Clock className="h-4 w-4 text-accent" />
+                    <span className="text-sm">4:00 PM – 7:30 PM</span>
+                  </div>
+                  <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm">
+                    <MapPin className="h-4 w-4 text-accent" />
+                    <span className="text-sm">Cannes, France</span>
+                  </div>
+                </div>
+
+                <p className="text-neutral-400">
+                  A high-signal showcase for technical founders building
+                  foundational Web3 infrastructure. From zero-knowledge
+                  applications to next-gen L2s and AI x crypto, we're curating
+                  the kind of builders VCs actually want to back.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <MagneticButton>
+                    <Button
+                      asChild
+                      className="bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group"
+                    >
+                      <Link href="/events/cannes-2025">
+                        <span className="relative z-10 flex items-center">
+                          View Details
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                        <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                      </Link>
+                    </Button>
+                  </MagneticButton>
+
+                  <MagneticButton>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="relative overflow-hidden group"
+                    >
+                      <Link href="/events/cannes-2025#apply">
+                        <span className="relative z-10">Apply to Pitch</span>
+                        <span className="absolute inset-0 bg-accent/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                      </Link>
+                    </Button>
+                  </MagneticButton>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Vision 2025 */}
       <section className="section-padding bg-neutral-900/30">
         <div className="container-lg">
@@ -243,7 +333,7 @@ export default function Home() {
             />
 
             <FeatureCard
-              title="Regional Partnerships"
+              title="Partnerships"
               description="Expanding our reach through strategic partnerships across key blockchain hubs globally."
               icon="Handshake"
               delay={0.2}
@@ -261,63 +351,35 @@ export default function Home() {
 
       {/* Marquee Section */}
 
-      <div className="flex items-center  mt-8 justify-center space-x-12 px-8">
-        {[
-          "https://ik.imagekit.io/d2v6okduo/image(2).png?updatedAt=1747678784783",
-          "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747679474133",
-          "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1747679060514",
-        
-        ].map((item, i) => (
-          <div
-            key={i}
-            className="text-4xl font-display font-bold text-neutral-800"
-          >
-            <Image src={item} alt={`${item} logo`} height={80} width={200} />
-            <span className="text-accent mx-4">•</span>
-          </div>
-        ))}
+      <div className="flex items-center pt-12  flex-col justify-center space-x-12 px-8">
+        <SectionHeading title="Trusted By" center />
+        <div className="flex items-center justify-center space-x-36 py-8">
+          {[
+            {
+              src: "https://ik.imagekit.io/d2v6okduo/sdsads.png",
+              href: "https://x.com/NEARProtocol",
+              alt: "NEAR Protocol logo",
+            },
+            {
+              src: "https://campaignlabs.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F53f53137-7ed3-4ddb-b9a6-476bd466de65%2F2cac9c53-7860-44ca-826f-d469c3642758%2FCamp_Logo_-_White.png?table=block&id=df735c22-bcf2-4a4a-9f25-4a3547370e91&spaceId=53f53137-7ed3-4ddb-b9a6-476bd466de65&width=2000&userId=&cache=v2",
+              href: "https://x.com/campnetworkxyz",
+              alt: "Camp Network logo",
+            },
+          ].map((item, i) => (
+            <a
+              key={i}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-4xl font-display font-bold text-neutral-800"
+            >
+              <Image src={item.src} alt={item.alt} height={100} width={235} />
+            </a>
+          ))}
+        </div>
       </div>
 
       {/* Why BackersStage */}
-      <section className="section-padding">
-        <div className="container-lg">
-          <SectionHeading
-            title="Why BackersStage"
-            subtitle="Our unique approach to connecting early-stage blockchain projects with the resources they need to succeed."
-            center
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <FeatureCard
-              title="VC-Project Matching"
-              description="We connect promising projects with the right investors based on mutual fit and growth potential."
-              icon="Handshake"
-              delay={0.1}
-            />
-
-            <FeatureCard
-              title="Event-led Growth"
-              description="Our Demo Days create high-impact opportunities for startups to showcase their vision to relevant stakeholders."
-              icon="Calendar"
-              delay={0.2}
-            />
-
-            <FeatureCard
-              title="Curation Over Hype"
-              description="We focus on quality over quantity, ensuring only the most promising projects reach our platform."
-              icon="Filter"
-              delay={0.3}
-            />
-
-            <FeatureCard
-              title="Partner First Mindset"
-              description="We build long-term relationships that benefit all parties in the ecosystem."
-              icon="Users"
-              delay={0.4}
-            />
-          </div>
-        </div>
-      </section>
 
       {/* Stats Section */}
       <section className="section-padding bg-neutral-900/30">
@@ -406,7 +468,7 @@ export default function Home() {
                       variant="outline"
                       className="relative overflow-hidden group"
                     >
-                      <Link href="/collaborate">
+                      <Link href="/events/cannes-2025#sponsor">
                         <span className="relative z-10">Collaborate</span>
                         <span className="absolute inset-0 bg-accent/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                       </Link>
