@@ -170,6 +170,96 @@ export default function AboutPage() {
         </div>
       </section> */}
 
+      {/* Media Kit Section */}
+      <section className="py-24">
+        <div className="container-lg">
+          <SectionHeading
+            title="Media Kit & Pitch Deck"
+            subtitle="Access our comprehensive media kit and company overview to learn more about BackersStage."
+            center
+          />
+
+          <div className="max-w-4xl mx-auto">
+            <RevealText delay={0.1}>
+              <div className="custom-card p-8 rounded-lg text-center">
+                <div className="mb-6">
+                  <div className="h-16 w-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
+                    <svg
+                      className="h-8 w-8 text-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="heading-sm mb-4">BackersStage Brand Kit</h3>
+                  <p className="text-neutral-400 mb-6">
+                    Access our comprehensive brand kit including logos, company overview, 
+                    brand guidelines, and design assets for media and partnership use.
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="https://www.figma.com/design/H8PynBhm4SzxT8D9Ch4loQ/Backers-Stage-Brand-Kit?node-id=0-1&p=f&t=L1KlmbtRcglQIAfL-0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-accent text-accent-foreground hover:bg-accent/90 rounded-lg transition-colors duration-300 font-medium"
+                  >
+                    <svg
+                      className="h-5 w-5 mr-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                    View Brand Kit
+                  </a>
+                  <a
+                    href="/Media%20Kit%20BackersStage%20Capital.pdf"
+                    download="BackersStage-Media-Kit.pdf"
+                    className="inline-flex items-center justify-center px-6 py-3 border border-accent text-accent hover:bg-accent/10 rounded-lg transition-colors duration-300 font-medium"
+                  >
+                    <svg
+                      className="h-5 w-5 mr-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                    Download PDF
+                  </a>
+                </div>
+              </div>
+            </RevealText>
+          </div>
+        </div>
+      </section>
+
       {/* Core Beliefs */}
       <section className="py-24 bg-neutral-900/30">
         <div className="container-lg">
@@ -267,45 +357,6 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-      <section className="py-24">
-        <div className="container-lg">
-          <SectionHeading
-            title="Why BackersStage"
-            subtitle="Our unique approach to connecting early-stage blockchain projects with the resources they need to succeed."
-            center
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <FeatureCard
-              title="VC-Project Matching"
-              description="We connect promising projects with the right investors based on mutual fit and growth potential."
-              icon="Handshake"
-              delay={0.1}
-            />
-
-            <FeatureCard
-              title="Event-led Growth"
-              description="Our Demo Days create high-impact opportunities for startups to showcase their vision to relevant stakeholders."
-              icon="Calendar"
-              delay={0.2}
-            />
-
-            <FeatureCard
-              title="Curation Over Hype"
-              description="We focus on quality over quantity, ensuring only the most promising projects reach our platform."
-              icon="Filter"
-              delay={0.3}
-            />
-
-            <FeatureCard
-              title="Partner First Mindset"
-              description="We build long-term relationships that benefit all parties in the ecosystem."
-              icon="Users"
-              delay={0.4}
-            />
-          </div>
-        </div>
-      </section>
     </>
   );
 }

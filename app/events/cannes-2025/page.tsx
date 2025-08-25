@@ -406,7 +406,7 @@ export default function CannesEventPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll  translate-y-8 transition-all duration-1000 delay-100 relative rounded-lg overflow-hidden group">
               <Image
-                src="https://ik.imagekit.io/d2v6okduo/PXL_20250429_130050697_2_.jpg?updatedAt=1747558918658"
+                src="/Screenshot_20250809_013448_MX Player.jpg"
                 alt="Dubai Event"
                 width={600}
                 height={400}

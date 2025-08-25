@@ -24,7 +24,6 @@ import { RevealImage } from "@/components/reveal-image";
 import { IconWrapper } from "@/components/icon-wrapper";
 import { StatCard } from "@/components/stat-card";
 import Image from "next/image";
-import { HeroAnnouncement } from "@/components/hero-announcement";
 
 // Define the specific icon names we're using
 type IconName =
@@ -37,7 +36,6 @@ type IconName =
   | "Users";
 
 export default function Home() {
-  const eventDate = new Date("2025-06-29T16:00:00");
   return (
     <>
       {/* Hero Section */}
@@ -46,14 +44,6 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-950/95 to-neutral-950" />
           <div className="noise" />
         </div>
-        <HeroAnnouncement
-          title="New Event"
-          message="Join us at our exclusive Cannes Demo Day during ETHCC [8] Week. Limited spots available for founders and investors."
-          link="/events/cannes-2025"
-          linkText="View Event Details"
-          eventDate={eventDate}
-          showCountdown={true}
-        />
         <div className="container-xl relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <RevealText>
@@ -143,8 +133,8 @@ export default function Home() {
       <section className="section-padding">
         <div className="container-lg">
           <SectionHeading
-            title="Demo Day Highlight"
-            subtitle="We hosted one of the most exclusive Demo Days at Token2049 Dubai 2025 — 500+ projects registered and 50+ VCs showed interest in joining."
+            title="Our Event Journey"
+            subtitle="From Dubai to Bali, we've hosted successful Demo Days connecting 1000+ projects with 100+ VCs across multiple Web3 conferences."
             center
           />
 
@@ -162,16 +152,10 @@ export default function Home() {
               <RevealText delay={0.1}>
                 <div className="flex items-center space-x-3 mb-2">
                   <div className="h-1 w-10 bg-accent"></div>
-                  <Link
-                    href={"https://lu.ma/ka7540hd"}
-                    target="_blank"
-                    className="text-accent font-medium"
-                  >
-                    Demo day & Pitch compition @Token2049
-                  </Link>
+                  <span className="text-accent font-medium">Latest Success</span>
                 </div>
                 <h3 className="heading-md">
-                  BackersStage hosted a focused Demo Day during Token2049 Dubai
+                  Multiple Demo Days Across Global Web3 Conferences
                 </h3>
               </RevealText>
 
@@ -191,10 +175,10 @@ export default function Home() {
                 <RevealText delay={0.3}>
                   <div className="custom-card p-6">
                     <div className="text-3xl font-display font-bold text-accent mb-2">
-                      500+
+                      1000+
                     </div>
                     <p className="text-neutral-400">
-                      Projects registered for our Demo Day
+                      Total project registrations
                     </p>
                   </div>
                 </RevealText>
@@ -202,10 +186,10 @@ export default function Home() {
                 <RevealText delay={0.4}>
                   <div className="custom-card p-6">
                     <div className="text-3xl font-display font-bold text-accent mb-2">
-                      50+
+                      100+
                     </div>
                     <p className="text-neutral-400">
-                      VCs showed interest in joining
+                      VCs and angels engaged
                     </p>
                   </div>
                 </RevealText>
@@ -215,7 +199,7 @@ export default function Home() {
                 <MagneticButton>
                   <Button asChild className="mt-4 group">
                     <Link href="/what-weve-done" className="flex items-center">
-                      <span>Learn More</span>
+                      <span>View All Events</span>
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
@@ -228,84 +212,141 @@ export default function Home() {
       <section className="section-padding bg-neutral-900/30">
         <div className="container-lg">
           <SectionHeading
-            title="Upcoming Event"
-            subtitle="Join us at our next event in Cannes, France during ETHCC [8] Week."
+            title="Upcoming Events"
+            subtitle="Join us at Korea Blockchain Week and Token2049 Singapore for major networking and Demo Day events."
             center
           />
 
-          <div className="custom-card p-8 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="relative rounded-lg overflow-hidden">
-                {/* Replace img with next/image for better optimization */}
-                <Image
-                  src="https://ik.imagekit.io/d2v6okduo/WhatsApp%20Image%202025-05-25%20at%2015.45.05_7bfd64cd.jpg"
-                  alt="Cannes Event"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover rounded-lg"
-                  priority
-                />
-                <div className="absolute top-4 left-4">
-                  <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
-                    June 29, 2025
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Korea Blockchain Week Card */}
+            <div className="custom-card p-6 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10">
+                <div className="relative rounded-lg overflow-hidden mb-6">
+                  <Image
+                    src="/Screenshot_20250809_013456_MX Player.jpg"
+                    alt="Korea Blockchain Week"
+                    width={400}
+                    height={250}
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
+                      Sep 22-25, 2025
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="space-y-6">
-                <h3 className="heading-md group-hover:text-accent transition-colors duration-300">
-                  BackersStage: Founder-Powered Demo Day
+                <h3 className="text-xl font-bold mb-4 group-hover:text-accent transition-colors duration-300">
+                  Korea Blockchain Week
                 </h3>
 
-                <div className="flex flex-wrap gap-4 mb-4">
-                  <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm">
-                    <Calendar className="h-4 w-4 text-accent" />
-                    <span className="text-sm">June 29, 2025</span>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm text-xs">
+                    <Calendar className="h-3 w-3 text-accent" />
+                    <span>Sep 22-25</span>
                   </div>
-                  <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm">
-                    <Clock className="h-4 w-4 text-accent" />
-                    <span className="text-sm">4:00 PM – 7:30 PM</span>
-                  </div>
-                  <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm">
-                    <MapPin className="h-4 w-4 text-accent" />
-                    <span className="text-sm">Cannes, France</span>
+                  <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm text-xs">
+                    <MapPin className="h-3 w-3 text-accent" />
+                    <span>Seoul, Korea</span>
                   </div>
                 </div>
 
-                <p className="text-neutral-400">
-                  A high-signal showcase for technical founders building
-                  foundational Web3 infrastructure. From zero-knowledge
-                  applications to next-gen L2s and AI x crypto, we're curating
-                  the kind of builders VCs actually want to back.
+                <p className="text-neutral-400 text-sm mb-6">
+                  Join us for an exclusive Founders Lounge during Korea Blockchain Week, 
+                  connecting Web3 builders with Asian VCs and ecosystem partners.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col gap-3">
                   <MagneticButton>
-                    <Button
-                      asChild
-                      className="bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group"
-                    >
-                      <Link href="/events/cannes-2025">
-                        <span className="relative z-10 flex items-center">
-                          View Details
-                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                        <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                    <Button asChild size="sm" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                      <Link href="https://backersstage.notion.site/Founders-Lounge-KBW-Seoul-Sep-22nd-25a900994c6980c0a125f5e39de84a7a?source=copy_link" target="_blank">
+                        Partnership Deck
+                        <ArrowRight className="ml-2 h-3 w-3" />
                       </Link>
                     </Button>
                   </MagneticButton>
-
                   <MagneticButton>
-                    <Button
-                      asChild
-                      variant="outline"
-                      className="relative overflow-hidden group"
-                    >
-                      <Link href="/events/cannes-2025#apply">
-                        <span className="relative z-10">Apply to Pitch</span>
-                        <span className="absolute inset-0 bg-accent/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                    <Button asChild variant="outline" size="sm" className="w-full">
+                      <Link href="https://lu.ma/kgkuizrv" target="_blank">
+                        View All Events
+                      </Link>
+                    </Button>
+                  </MagneticButton>
+                </div>
+              </div>
+            </div>
+
+            {/* Token2049 Singapore Card */}
+            <div className="custom-card p-6 relative overflow-hidden group hover:shadow-[0_0_25px_rgba(130,255,165,0.15)] transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10">
+                <div className="relative rounded-lg overflow-hidden mb-6">
+                  <Image
+                    src="/Screenshot_20250809_013508_MX Player.jpg"
+                    alt="Token2049 Singapore Events"
+                    width={400}
+                    height={250}
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
+                      Sep 29 - Oct 2, 2025
+                    </div>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold mb-4 group-hover:text-accent transition-colors duration-300">
+                  Token2049 Singapore
+                </h3>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm text-xs">
+                    <Calendar className="h-3 w-3 text-accent" />
+                    <span>Sep 29 - Oct 2</span>
+                  </div>
+                  <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-800/50 backdrop-blur-sm text-xs">
+                    <MapPin className="h-3 w-3 text-accent" />
+                    <span>Singapore</span>
+                  </div>
+                </div>
+
+                <p className="text-neutral-400 text-sm mb-4">
+                  Three major events featuring 500+ curated leaders, founders, and VCs. 
+                  Demo Day, Happy Hour, and exclusive closing ceremony.
+                </p>
+
+                {/* Three Events List */}
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center space-x-2 text-xs">
+                    <div className="h-1.5 w-1.5 bg-accent rounded-full"></div>
+                    <span>Demo Day & Pitching Competition (Sep 29)</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-xs">
+                    <div className="h-1.5 w-1.5 bg-accent rounded-full"></div>
+                    <span>Founder x VC Happy Hour (Sep 30)</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-xs">
+                    <div className="h-1.5 w-1.5 bg-accent rounded-full"></div>
+                    <span>Closing Party - Invite Only (Oct 2)</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <MagneticButton>
+                    <Button asChild size="sm" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                      <Link href="https://lu.ma/kgkuizrv" target="_blank">
+                        View All Events
+                        <ArrowRight className="ml-2 h-3 w-3" />
+                      </Link>
+                    </Button>
+                  </MagneticButton>
+                  <MagneticButton>
+                    <Button asChild variant="outline" size="sm" className="w-full">
+                      <Link href="https://backersstage.notion.site/?source=copy_link" target="_blank">
+                        Partnership Deck
                       </Link>
                     </Button>
                   </MagneticButton>
@@ -353,7 +394,7 @@ export default function Home() {
 
       <div className="flex items-center pt-12  flex-col justify-center space-x-12 px-8">
         <SectionHeading title="Trusted By" center />
-        <div className="flex items-center justify-center space-x-36 py-8">
+        <div className="flex items-center justify-center space-x-12 py-8">
           {[
             {
               src: "https://ik.imagekit.io/d2v6okduo/sdsads.png",
@@ -387,26 +428,26 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                number: "500+",
-                label: "Projects Registered",
+                number: "1000+",
+                label: "Projects Connected",
                 icon: "BarChart" as IconName,
                 delay: 0.1,
               },
               {
-                number: "50+",
-                label: "VCs Interested",
+                number: "100+",
+                label: "VCs & Angels Engaged",
                 icon: "Handshake" as IconName,
                 delay: 0.2,
               },
               {
-                number: "10k+",
-                label: "2026 Project Goal",
+                number: "3",
+                label: "Major Events Hosted",
                 icon: "Zap" as IconName,
                 delay: 0.3,
               },
               {
-                number: "500+",
-                label: "2026 VC Goal",
+                number: "5+",
+                label: "Global Partnerships",
                 icon: "CheckCircle" as IconName,
                 delay: 0.4,
               },

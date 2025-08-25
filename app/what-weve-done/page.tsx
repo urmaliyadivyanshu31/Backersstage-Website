@@ -71,9 +71,9 @@ export default function WhatWeveDonePage() {
 
             <RevealText delay={0.1}>
               <p className="body-lg text-neutral-400 mb-8">
-                We're in the early stages of our journey, with our first
-                successful Demo Day already demonstrating the power of our
-                approach.
+                Our journey has expanded across multiple major Web3 conferences,
+                successfully connecting 1000+ projects with 100+ VCs through our
+                curated Demo Day format across 3 major events.
               </p>
             </RevealText>
 
@@ -84,63 +84,183 @@ export default function WhatWeveDonePage() {
         </div>
       </section>
 
-      {/* Token2049 Dubai Event - Improved layout with no gap */}
+      {/* Our Events Timeline */}
       <section className="pb-20">
         <div className="container-lg">
-          <div className="glass p-8 rounded-lg max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">
-                  Token2049 Dubai 2025
-                </h2>
-                <ul className="space-y-4 mb-6">
-                  <li className="flex items-start">
-                    <Calendar className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Event Date:</span>
-                      <p className="text-neutral-400">29, April 2025</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Users className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">
-                        Project Registrations:
-                      </span>
-                      <p className="text-neutral-400">500+</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Building className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">VC Interest:</span>
-                      <p className="text-neutral-400">
-                        50+ VCs showed interest
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-                <p className="text-neutral-400">
-                  Our inaugural Demo Day at Token2049 Dubai was a
-                  proof-of-concept that validated our approach. We're now
-                  scaling our operations based on the success and learnings from
-                  this event.
-                </p>
-                <Link
-                  className="text-accent mt-3"
-                  target="_blank"
-                  href={"https://lu.ma/user/BackersStage"}
-                >
-                  Demo day & Pitch compition @Token2049
-                </Link>
+          <SectionHeading
+            title="Our Event Timeline"
+            subtitle="From Dubai to Bali, we've built a track record of successful Demo Days across 3 major Web3 conferences."
+            center
+          />
+
+          <div className="space-y-12">
+            {/* Token2049 Dubai */}
+            <div className="glass p-8 rounded-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div className="flex items-center mb-4">
+                    <div className="h-3 w-3 bg-accent rounded-full mr-3"></div>
+                    <h2 className="text-2xl font-bold">Token2049 Dubai 2025</h2>
+                  </div>
+                  <ul className="space-y-4 mb-6">
+                    <li className="flex items-start">
+                      <Calendar className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Event Date:</span>
+                        <p className="text-neutral-400">April 29, 2025</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Users className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Project Registrations:</span>
+                        <p className="text-neutral-400">500+</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Building className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">VC Interest:</span>
+                        <p className="text-neutral-400">50+ VCs engaged</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p className="text-neutral-400 mb-4">
+                    Our inaugural Demo Day at Token2049 Dubai validated our approach with
+                    massive founder and investor interest. The event featured curated 1:1 
+                    meetings and strategic partnerships with NEAR Foundation and Camp Network.
+                  </p>
+                  <Link
+                    className="text-accent hover:underline"
+                    target="_blank"
+                    href={"https://lu.ma/ka7540hd"}
+                  >
+                    View Event Details →
+                  </Link>
+                </div>
+                <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden">
+                  <Image
+                    src="https://ik.imagekit.io/d2v6okduo/PXL_20250429_132947890.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559023669"
+                    alt="Token2049 Dubai Demo Day"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
-              <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden">
-                <Image
-                  src="https://ik.imagekit.io/d2v6okduo/PXL_20250429_132947890.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559023669"
-                  alt="Token2049 Dubai Demo Day"
-                  fill
-                  className="object-cover"
-                />
+            </div>
+
+            {/* ETHCC France */}
+            <div className="glass p-8 rounded-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="order-2 md:order-1">
+                  <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden">
+                    <Image
+                      src="https://ik.imagekit.io/d2v6okduo/PXL_20250429_130934569_1_(1).jpg?updatedAt=1747559181346"
+                      alt="ETHCC France Demo Day"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="order-1 md:order-2">
+                  <div className="flex items-center mb-4">
+                    <div className="h-3 w-3 bg-accent rounded-full mr-3"></div>
+                    <h2 className="text-2xl font-bold">ETHCC France 2025</h2>
+                  </div>
+                  <ul className="space-y-4 mb-6">
+                    <li className="flex items-start">
+                      <Calendar className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Event Date:</span>
+                        <p className="text-neutral-400">July 2025</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Users className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Focus:</span>
+                        <p className="text-neutral-400">Technical founders showcase</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Building className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Outcome:</span>
+                        <p className="text-neutral-400">High-quality founder-VC connections</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p className="text-neutral-400 mb-4">
+                    During ETHCC [8] Week, we hosted a technical-focused Demo Day emphasizing
+                    infrastructure projects and protocol development. The event strengthened
+                    our reputation for curating serious builders in the Web3 space.
+                  </p>
+                  <Link
+                    className="text-accent hover:underline"
+                    target="_blank"
+                    href={"https://lu.ma/1cpw5eaj"}
+                  >
+                    View Event Details →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+{/* Coinfest Asia */}
+            <div className="glass p-8 rounded-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div className="flex items-center mb-4">
+                    <div className="h-3 w-3 bg-accent rounded-full mr-3"></div>
+                    <h2 className="text-2xl font-bold">Coinfest Asia 2025</h2>
+                  </div>
+                  <ul className="space-y-4 mb-6">
+                    <li className="flex items-start">
+                      <Calendar className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Event Date:</span>
+                        <p className="text-neutral-400">August 20, 2025</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Users className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Format:</span>
+                        <p className="text-neutral-400">Founder x VC Happy Hour</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Building className="h-5 w-5 mr-3 text-accent shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Location:</span>
+                        <p className="text-neutral-400">Bali, Indonesia</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <p className="text-neutral-400 mb-4">
+                    Our most recent event in Bali featured a relaxed networking format with
+                    curated founders, VCs, and ecosystem participants. Co-hosted with leading
+                    partners including Coineasy, Fambam, and Blocksquare.
+                  </p>
+                  <div className="text-sm text-neutral-500 mb-4">
+                    Featured $500-$5000 BTC giveaway by Bitcoin.com Wallet
+                  </div>
+                  <Link
+                    className="text-accent hover:underline"
+                    target="_blank"
+                    href={"https://lu.ma/kww0f7r4"}
+                  >
+                    View Event Details →
+                  </Link>
+                </div>
+                <div className="relative aspect-video md:aspect-square rounded-lg overflow-hidden">
+                  <Image
+                    src="https://ik.imagekit.io/d2v6okduo/PXL_20250429_130050697_2_.jpg?updatedAt=1747558918658"
+                    alt="Coinfest Asia Happy Hour"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -152,7 +272,7 @@ export default function WhatWeveDonePage() {
         <div className="container-lg">
           <SectionHeading
             title="Event Gallery"
-            subtitle="Highlights from our inaugural Demo Day at Token2049 Dubai."
+            subtitle="Highlights from our Demo Days across Dubai, France, and Bali."
             center
           />
 
@@ -185,7 +305,9 @@ export default function WhatWeveDonePage() {
                 "https://ik.imagekit.io/d2v6okduo/PXL_20250429_130934569_1_(1).jpg?updatedAt=1747559181346",
                 "https://ik.imagekit.io/d2v6okduo/PXL_20250429_132802494.PORTRAIT.ORIGINAL_1_.jpg?updatedAt=1747559217287",
                 "https://ik.imagekit.io/d2v6okduo/PXL_20250429_141537936.MP_1_.jpg?updatedAt=1747559334860",
-              ].map((item, i) => (
+              ].map((item, i) => {
+                const eventNames = ["Token2049 Dubai", "Token2049 Dubai", "ETHCC France", "Token2049 Dubai", "Token2049 Dubai"];
+                return (
                 <div
                   key={i}
                   className="relative flex-shrink-0 w-[300px] h-[300px] rounded-lg overflow-hidden snap-center hover-lift custom-glow group"
@@ -198,11 +320,12 @@ export default function WhatWeveDonePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <p className="text-sm text-white font-medium">
-                      Token2049 Dubai Demo Day
+                      {eventNames[i]} Demo Day
                     </p>
                   </div>
                 </div>
-              ))}
+              );
+              })}
             </div>
 
             <div className="flex justify-center mt-6 space-x-2">

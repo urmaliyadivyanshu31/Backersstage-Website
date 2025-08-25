@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button";
 
 const mediaPartners = [
   {
-    image: "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1748165097921",
+    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRkZGRkZGIiByeD0iOCIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIyMCIgZmlsbD0iI0Q0QUY3NyIvPgo8cGF0aCBkPSJNMzUgMzJoMTB2NmgtMnY2aC02di02aC0ydi02eiIgZmlsbD0id2hpdGUiLz4KPHR4dCB4PSI3MCIgeT0iNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMzMzMzMzMiPkNPSU5HQUJCQVIvdGV4dD4KPC9zdmc+Cg==",
     link: "https://x.com/coin_gabbar_",
     name: "CoinGabbar",
   },
   {
-    image: "https://ik.imagekit.io/d2v6okduo/image.png",
+    image: "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1748165041677",
     link: "https://x.com/_HerDAO",
     name: "Her DAO",
   },
@@ -34,6 +34,11 @@ const mediaPartners = [
     image: "https://ik.imagekit.io/d2v6okduo/image.png?updatedAt=1748165041677",
     link: "https://x.com/AarambhLabs",
     name: "Aarambh Labs",
+  },
+  {
+    image: "https://bitcoin.com/wp-content/uploads/2021/07/bitcoin-com-logo-horizontal-white-1.svg",
+    link: "https://bitcoin.com",
+    name: "Bitcoin.com",
   },
 ];
 
@@ -253,7 +258,7 @@ export default function MediaPage() {
               size="lg"
               className="bg-accent text-accent-foreground hover:bg-accent/90 relative overflow-hidden group"
             >
-              <Link href="https://lu.ma/user/BackersStage" target="_blank">
+              <Link href="https://www.figma.com/design/H8PynBhm4SzxT8D9Ch4loQ/Backers-Stage-Brand-Kit?node-id=0-1&p=f&t=L1KlmbtRcglQIAfL-0" target="_blank">
                 <span className="relative z-10">Media Press</span>
                 <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
               </Link>
